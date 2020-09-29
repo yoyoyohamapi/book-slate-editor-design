@@ -8,12 +8,15 @@
 
 我们先来看一个简单地 Slate 的 Demo，这个 Demo 展示了一个支持「文本加粗」的富文本编辑器：
 
-<img src="./statics/slate-bold-demo.png" width="500" align="center" />
+<p align="center">
+	<img src="./statics/slate-bold-demo.png" width="500" align="center" />
+</p>
 
 从用户选中一段文本，并按下「加粗」的快捷键，到最后看见「加粗的文本」:
 
-<img src="./statics/bold-selected-text.png" width="500" align="center" />
-
+<p align="center">
+	<img src="./statics/bold-selected-text.png" width="500" align="center" />
+</p>
 
 
 Slate.js 通过 Controller 主导了这个过程，更具体地：
@@ -26,7 +29,9 @@ Slate.js 通过 Controller 主导了这个过程，更具体地：
 - 命令执行完毕，Controller 借助于标记到的脏路径，对路径上的节点执行「normalize」，例如合并相邻文本等等
 - 等到 Event Loop 调度下一次 mircro task 时，视图层负责将最新的模型数据渲染到页面，用户最终看到了加粗的文本
 
-<img src="./statics/slate-workflow.png" align="center" />
+<p align="center">
+	<img src="./statics/slate-workflow.png" align="center" />
+</p>
 
 循着这个 Demo，后续的章节会逐步讲述：
 
