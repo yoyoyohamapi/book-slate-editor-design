@@ -1,9 +1,11 @@
-## Deep in Slate.js
+# Deep in Slate.js
+
+- 使用 Gitbook 阅读：[地址](https://app.gitbook.com/@wu-xiao-jun/s/deep-in-slate-js/)
+- 使用 Github 阅读：[目录](./SUMMARY.md)
 
 <p align="center">
 	<img src="./statics/wysiwyg.png" />
 </p>
-
 
 富文本编辑器，指的是用户能够在浏览器中编排富文本（具有风格及排版的文本，如可以设定字体样式，进行图文混排等）。通常，在英文社区，习惯称富文本编辑器为 「WYSIWYG Editor（what you see is what you get，所见即所得）」。
 
@@ -19,7 +21,6 @@
 	<img src="./statics/ie5.png" width="500" />
 </p>
 
-
 contentEditable 涉及两个属性 `designMode` 与 `contentEditable`，前者可以控制整个文档（document）是否可以编辑，后者则是控制某个元素（element）是否可编辑。当时，微软发布的这个特性，除了一个[简要的使用文档](<https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537837(v=vs.85)?redirectedfrom=MSDN>)，没有对可编辑性的内在行为和实现做更多描述。
 
 > 虽然是 IE 5.5 引入了 contentEditable，但对应的功能早在 IE 4 就可以通过自定义 ActiveX 控件实现。
@@ -28,17 +29,13 @@ contentEditable 涉及两个属性 `designMode` 与 `contentEditable`，前者�
 
 ```html
 <!DOCTYPE html>
-<div contenteditable>
-  test
-</div>
+<div contenteditable>test</div>
 ```
 
 ```html
 <!DOCTYPE html>
 <div contenteditable>
-  <div>
-    test
-  </div>
+  <div>test</div>
 </div>
 ```
 
@@ -62,8 +59,6 @@ contentEditable 涉及两个属性 `designMode` 与 `contentEditable`，前者�
 	<img src="./statics/document-execcommand.png" width="400" />
 </p>
 
-
-
 浏览器自己的 `document.execCommand` 并非无所不能，甚至还成为了文本编辑器的实现掣肘，不仅仅是支持的「指令有限」，就连同一个指令，各浏览器的「实现都有可能不同」。因此，更多的编辑功能仍然需要开发者进行事件劫持等操作才能实现。
 
 ## Why ContentEditable is Terrible
@@ -80,8 +75,6 @@ contentEditable 涉及两个属性 `designMode` 与 `contentEditable`，前者�
 	<img src="./statics/contenteditable-content-problem.png" width="500"  />
 </p>
 
-
-
 下面这段文本：
 
 > The hobbit was a very well-to-do hobbit, and his name was _**Baggins**_.
@@ -92,7 +85,8 @@ contentEditable 涉及两个属性 `designMode` 与 `contentEditable`，前者�
 <strong><em>Baggins</em></strong>
 <em><strong>Baggins</strong></em>
 <em><strong>Bagg</strong><strong>ins</strong></em>
-<em><strong>Bagg</strong></em><strong><em>ins</em></strong>
+<em><strong>Bagg</strong></em
+><strong><em>ins</em></strong>
 ```
 
 ### 视觉选区与实际选区的多对多关系
@@ -103,8 +97,6 @@ contentEditable 涉及两个属性 `designMode` 与 `contentEditable`，前者�
 	<img src="./statics/contenteditable-selection-problem.png" width="500" />
 </p>
 
-
-
 例如，我们的 HTML 如果是：
 
 ```html
@@ -114,15 +106,17 @@ his name was <strong><em>Baggins</em></strong>
 用户看到的光标落在 `Baggins` 前面，这样的选区，在内部可能分化为：
 
 ```html
-his name was <cursor /><strong><em>Baggins</em></strong>
-his name was <strong><cursor /><em>Baggins</em></strong>
-his name was <strong><em><cursor />Baggins</em></strong>
+his name was <cursor /><strong><em>Baggins</em></strong> his name was
+<strong><cursor /><em>Baggins</em></strong> his name was
+<strong
+  ><em><cursor />Baggins</em></strong
+>
 ```
 
 在光标位置插入字符 `I`，DOM 选区的不同，最终导致了用户看到了不同的内容：
 
-- his name was I_**Baggins**_
-- his name was I_**Baggins**_
+- his name was I***Baggins***
+- his name was I***Baggins***
 - his name was _**IBaggins**_
 
 而假如我们的文本是：
@@ -145,7 +139,6 @@ his name was <strong><em><cursor />Baggins</em></strong>
 	<img src="./statics/dangling-selection.png" />
 </p>
 
-
 ## 主流的编辑器架构
 
 由于 contenteditable 的不可靠，流行的 Web 富文本编辑器多采用下面的方案来规避 contenteditable 的缺陷：
@@ -156,7 +149,6 @@ his name was <strong><em><cursor />Baggins</em></strong>
 <p align="center">
   <img src="./statics/model-view-structure.png" width="600"/>
 </p>
-
 
 接下来，我们会以 [Slate.js](https://github.com/ianstormtaylor/slate) 为例，介绍目前主流的 Web 富文本编辑器架构方式。通过阅读这个小册，你将了解：
 
