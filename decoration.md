@@ -79,7 +79,7 @@ const MentionPlugin = () => ({
 
 > 使用 `controller.setDecorations(decoratins)` 设置的 decorations 会被放在 top-level 上，即 `controller.value` 上
 
-## 内部实现
+## 注入与分发
 
 从上面的引例不难看出，一个节点的被装饰的序列就来源于：
 
@@ -137,7 +137,7 @@ class Node extends React.Component {
 
 Decoration 的工作机制有下面这些特点：
 
-- **渲染期计算：**decoration 是在渲染期间被计算出的
+- **渲染期计算**：decoration 是在渲染期间被计算出的
 - **自顶向下分发 decorations**：避免节点遍历超长 decorations 序列
 - **限制计算**：由于 Node Component 做了 re-render 频度控制，当编辑器模型变更时，不需要 re-render 的 Node 也不会被计算 decorations。例如我们在处理链接高亮的时候，如果链接节点没有变化，它的 decorations 不会被重新计算。
 

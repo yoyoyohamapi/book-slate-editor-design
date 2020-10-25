@@ -11,7 +11,7 @@ Slate.js 也是如此，当我们拥有了一个 Controller 对象，就能通�
 ```js
 controller
   .insertText('Hello World.') // 修改内容
-	.moveToStartOfNextText();   // 移动选区
+  .moveToStartOfNextText();   // 移动选区
 ```
 
 Slate.js 也为指令做了不同类型的划分：
@@ -44,7 +44,7 @@ const controller = new Controller({
 controller.toggleBold()
 ```
 
-## 内部实现
+## 绑定指令
 
 出于减少冗余代码的考虑，Slate.js 大量的命令都是在运行时动态注入的，例如 `*ByKey`  指令就是基于 `*ByPath` 指令创建，并注入到 Controller 实例的：
 

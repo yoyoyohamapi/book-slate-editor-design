@@ -93,7 +93,7 @@ editor.middleware = {
 }
 ```
 
-在逻辑扩展处，通过 `editor.run(hookName, ..args)` 来执行对应的 middleware：
+并通过 `editor.run(hookName, ..args)` 来执行对应的 middleware：
 
 ```js
 // packages/slate/src/interfaces/node.js
@@ -106,7 +106,7 @@ class NodeInterface {
 }
 ```
 
-`editor.run` 的过程和 koa.js 的 middleware 类似：使用迭代器的思路依序执行 middleware 序列中的各个 hook。另外，Slate.js 的每个 hook 也会被注入当前编辑器 Controller 实例和 next 方法：
+`editor.run` 的过程和 koa.js 的 middleware 类似：使用迭代器的思路依序执行 middleware 序列中的各个 hook。Slate.js 的每个 hook 也会被注入当前编辑器 Controller 实例和 next 方法，用于控制是否继续 middleware 中的下一个过程：
 
 ```js
 // packages/slate/src/controllers/editor.js

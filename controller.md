@@ -35,7 +35,7 @@ Controller 是 UI 无关的，其绑定的方法都是用来操作文档模型�
 ```js
 controller
   .insertText('Hello World')
-	.moveToStartOfNextText()
+  .moveToStartOfNextText()
 ```
 
 这些方法在 Slate.js 被命名为 Command，即指令，接下来我们就看看 Slate.js 是如何设计指令系统的。

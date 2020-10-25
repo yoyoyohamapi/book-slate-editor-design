@@ -105,6 +105,4 @@ class Node {
 
 > 在 [memorize](./memozie.md) 一节中，我们介绍了 Slate.js 是如何使用缓存函数调用来优化性能的。
 
-
-
 现在，Slate.js 中的模型差不多就介绍完了，接下来，我们看看，Slate.js 是如何让这份模型与终端用户进行互动的。
