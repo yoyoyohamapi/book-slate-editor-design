@@ -1,6 +1,6 @@
 # Deep in Slate.js
 
-* [序言：什么是富文本编辑器](README.md)
+* [Deep in Slate.js](README.md)
 * [Slate.js 设计](slate-intro.md)
   * [HTML 中的富文本](rich-text-in-html.md)
   * [Slate.js 中的富文本](rich-text-in-slate.md)

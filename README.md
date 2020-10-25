@@ -1,4 +1,4 @@
-## 什么是 Web 富文本编辑器
+## Deep in Slate.js
 
 <p align="center">
 	<img src="./statics/wysiwyg.png" />
