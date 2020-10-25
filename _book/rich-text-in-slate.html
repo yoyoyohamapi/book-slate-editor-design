@@ -1,0 +1,778 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Slate.js 中的富文本 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="path.html" />
+    
+    
+    <link rel="prev" href="rich-text-in-html.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    序言：什么是富文本编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="slate-intro.html">
+            
+                <a href="slate-intro.html">
+            
+                    
+                    Slate.js 设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="rich-text-in-html.html">
+            
+                <a href="rich-text-in-html.html">
+            
+                    
+                    HTML 中的富文本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="rich-text-in-slate.html">
+            
+                <a href="rich-text-in-slate.html">
+            
+                    
+                    Slate.js 中的富文本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="path.html">
+            
+                <a href="path.html">
+            
+                    
+                    节点寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="why-immutable.html">
+            
+                <a href="why-immutable.html">
+            
+                    
+                    不可变数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="memorize.html">
+            
+                <a href="memorize.html">
+            
+                    
+                    Memorize
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="how-doese-slate-works.html">
+            
+                <a href="how-doese-slate-works.html">
+            
+                    
+                    Slate.js 是怎么工作的
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="controller.html">
+            
+                <a href="controller.html">
+            
+                    
+                    大脑 - Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    指令系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="operation.html">
+            
+                <a href="operation.html">
+            
+                    
+                    Operation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="plugin.html">
+            
+                <a href="plugin.html">
+            
+                    
+                    插件体系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="normalize.html">
+            
+                <a href="normalize.html">
+            
+                    
+                    Normalize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="decoration.html">
+            
+                <a href="decoration.html">
+            
+                    
+                    Decoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="annotation.html">
+            
+                <a href="annotation.html">
+            
+                    
+                    Annotation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="sync-view-with-data.html">
+            
+                <a href="sync-view-with-data.html">
+            
+                    
+                    模型与视图的同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="slate-ecology.html">
+            
+                <a href="slate-ecology.html">
+            
+                    
+                    Slate.js 生态现状
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="serialize.html">
+            
+                <a href="serialize.html">
+            
+                    
+                    兼容其他格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="test.html">
+            
+                <a href="test.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mobile-editor.html">
+            
+                <a href="mobile-editor.html">
+            
+                    
+                    移动端编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="challenge-and-revolution.md">
+            
+                <span>
+            
+                    
+                    挑战与变革
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="challenge.html">
+            
+                <a href="challenge.html">
+            
+                    
+                    难于完美的编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="slate-050.html">
+            
+                <a href="slate-050.html">
+            
+                    
+                    激进的跃进 - Slate.js 0.50
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="collbarative-editor.md">
+            
+                <span>
+            
+                    
+                    附录 - 协同理论
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="ot.html">
+            
+                <a href="ot.html">
+            
+                    
+                    OT 算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="collaborate-engine.html">
+            
+                <a href="collaborate-engine.html">
+            
+                    
+                    协同调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Slate.js 中的富文本</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="slatejs-&#x4E2D;&#x7684;&#x5BCC;&#x6587;&#x672C;">Slate.js &#x4E2D;&#x7684;&#x5BCC;&#x6587;&#x672C;</h1>
+<p>Slate.js &#x5728;&#x6570;&#x636E;&#x6A21;&#x578B;&#x7684;&#x8BBE;&#x8BA1;&#x5B97;&#x65E8;&#x662F; &#x300C;Mirror the DOM&#x300D;&#xFF0C;&#x5373;&#x5C3D;&#x53EF;&#x80FD;&#x6309;&#x7167;&#x73B0;&#x884C;&#x7684; DOM &#x6807;&#x51C6;&#x53BB;&#x62BD;&#x8C61;&#x81EA;&#x5DF1;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;&#x3002;&#x8FD9;&#x79CD;&#x4EB2;&#x8FD1;&#x73B0;&#x884C;&#x6807;&#x51C6;&#x7684;&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;&#xFF0C;&#x964D;&#x4F4E;&#x4E86;&#x5F00;&#x53D1;&#x8005;&#x63A5;&#x5165;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x77E5;&#x8BC6;&#x8D1F;&#x62C5;&#xFF1A;&#x6211;&#x719F;&#x6089; HTML &#xFF0C;&#x5C31;&#x80FD;&#x5F88;&#x5FEB;&#x4E0A;&#x624B; Slate.js&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5206;&#x522B;&#x4ECE;&#x5BF9;&#x8282;&#x70B9;&#x548C;&#x9009;&#x533A;&#x7684;&#x8BBE;&#x8BA1;&#x4E0A;&#xFF0C;&#x770B;&#x770B; Slate.js &#x662F;&#x600E;&#x4E48;&#x6A21;&#x62DF; DOM &#x7684;&#x3002;</p>
+<p align="center">
+  <img src="statics/slate-value-structure.png" width="250">
+</p>
+
+
+
+<h2 id="node-mirror">Node Mirror</h2>
+<p>&#x5728; Slate.js &#x4E2D;&#xFF0C;&#x540C;&#x6837;&#x533A;&#x5206;&#x4E86;&#xFF1A;</p>
+<ul>
+<li>Node&#xFF1A;&#x6700;&#x9AD8;&#x7EA7;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x8BBF;&#x95EE;&#x8282;&#x70B9;&#x548C;&#x8282;&#x70B9;&#x5185;&#x5BB9;&#x7684;&#x65B9;&#x6CD5;</li>
+<li>Element&#xFF1A;&#x8868;&#x793A;&#x8282;&#x70B9;&#x5BB9;&#x5668;&#x7684; Node&#xFF0C;Slate.js &#x542B;&#x6709; Document&#x3001;Block &#x548C; Inline &#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x7684; Element</li>
+<li>Text&#xFF1A;&#x8868;&#x793A;&#x8282;&#x70B9;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x7684; Node</li>
+</ul>
+<h3 id="node">Node</h3>
+<p align="center">
+    <img src="statics/mixin-node-interface.png" width="500">
+</p>
+
+<p>&#x7C7B;&#x4F3C;&#x4E8E; DOM&#xFF0C;Slate.js &#x540C;&#x6837;&#x4F7F;&#x7528; Node &#x4F5C;&#x4E3A;&#x57FA;&#x7840;&#x62BD;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5B83;&#x4E5F;&#x9700;&#x8981;&#x8003;&#x8651;&#xFF1A;</p>
+<ul>
+<li><strong>&#x5982;&#x4F55;&#x5212;&#x5206;&#x8282;&#x70B9;&#x7C7B;&#x578B;</strong></li>
+<li><strong>&#x5982;&#x4F55;&#x5904;&#x7406;&#x8282;&#x70B9;&#x5173;&#x7CFB;</strong></li>
+<li><strong>&#x5982;&#x4F55;&#x8868;&#x793A;&#x8282;&#x70B9;&#x5185;&#x5BB9;</strong></li>
+<li><strong>&#x5982;&#x4F55;&#x7ED1;&#x5B9A;&#x8282;&#x70B9;&#x6570;&#x636E;</strong></li>
+</ul>
+<p>&#x4E00;&#x4E2A; Node &#x5BF9;&#x8C61;&#x542B;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>key</code>&#xFF1A;&#x8282;&#x70B9;&#x5728;&#x5F53;&#x524D;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x7D22;&#x5F15;</li>
+<li><code>data</code>&#xFF1A;&#x8282;&#x70B9;&#x7ED1;&#x5B9A;&#x7684;&#x6570;&#x636E;</li>
+<li><code>nodes</code>&#xFF1A;&#x8282;&#x70B9;&#x7684;&#x5B50;&#x5B59;</li>
+<li><code>object</code>&#xFF1A;&#x8282;&#x70B9;&#x7C7B;&#x578B;</li>
+<li><code>text</code>&#xFF1A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF0C;&#x8FD4;&#x56DE;&#x8282;&#x70B9;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;</li>
+</ul>
+<p>&#x53E6;&#x5916;&#x4E5F;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x6784;&#x9020;&#x6A21;&#x578B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>{
+  <span class="hljs-keyword">static</span> create(attrs = {}) {}
+  <span class="hljs-keyword">static</span> createList(elements = []) {}
+  <span class="hljs-keyword">static</span> createProperties(attrs = {}) {}
+  <span class="hljs-keyword">static</span> fromJSON(value) {}
+  <span class="hljs-keyword">static</span> toJSON(options = {}) {}
+}
+</code></pre>
+<p>&#x9664;&#x4E86; Model&#xFF0C;Slate &#x8FD8;&#x5B9A;&#x4E49;&#x4E86; <strong>Node Interface</strong> &#xFF0C;&#x5728;&#x5F53;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x8282;&#x70B9;&#x904D;&#x5386;&#x3001;&#x8282;&#x70B9;&#x5185;&#x5BB9;&#x8BBF;&#x95EE;&#x3001;&#x8282;&#x70B9;&#x89C4;&#x8303;&#x5316;&#x7B49;&#x80FD;&#x529B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeInterface</span> </span>{
+  getText() {}
+  getNode(path) {}
+  getPath(key) {}
+  normalize() {}
+  validate() {}
+}
+</code></pre>
+<p>Slate.js &#x901A;&#x8FC7; mixin &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C06;&#x8FD9;&#x4E9B;&#x80FD;&#x529B;&#x6CE8;&#x5165;&#x5230; Node Model &#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-javascript">minxin(NodeInterface, [Document, Block, Inline, Text]);
+</code></pre>
+<h2 id="element">Element</h2>
+<p align="center">
+  <img src="statics/mixin-element-interface.png" width="400">
+</p>
+
+
+<p>&#x7C7B;&#x4F3C;&#x4E8E; HTML Element&#xFF0C;Slate.js &#x5C06;&#x8282;&#x70B9;&#x7C7B;&#x578B;&#x5206;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li><strong>Document Element</strong>&#xFF1A;&#x8868;&#x793A;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x6574;&#x4E2A;&#x6587;&#x6863;&#x6811;</li>
+<li><strong>Block Element</strong>: &#x8868;&#x793A;&#x7F16;&#x8F91;&#x5668;&#x4E2D;&#x7684;&#x5757;&#x7EA7;&#x5143;&#x7D20;</li>
+<li><strong>Inline Element</strong>&#xFF1A;&#x8868;&#x793A;&#x4E86;&#x7F16;&#x8F91;&#x5668;&#x4E2D;&#x7684;&#x884C;&#x5185;&#x5143;&#x7D20;</li>
+</ul>
+<p>Element Model &#x540C;&#x6837;&#x5177;&#x6709;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>key</code>&#xFF1A;&#x8282;&#x70B9;&#x5728;&#x5F53;&#x524D;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x7D22;&#x5F15;</li>
+<li><code>data</code>&#xFF1A;&#x8282;&#x70B9;&#x7ED1;&#x5B9A;&#x7684;&#x6570;&#x636E;</li>
+<li><code>nodes</code>&#xFF1A;&#x8282;&#x70B9;&#x7684;&#x5B50;&#x5B59;</li>
+<li><code>object</code>&#xFF1A;&#x8282;&#x70B9;&#x7C7B;&#x578B;</li>
+<li><code>text</code>&#xFF1A;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF0C;&#x8FD4;&#x56DE;&#x8282;&#x70B9;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;</li>
+</ul>
+<p>&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;Element Model &#x4E2D;&#x4E5F;&#x5B9A;&#x4E49;&#x4E86;&#x6784;&#x9020;&#x5BF9;&#x8C61;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Document</span> </span>{
+  <span class="hljs-keyword">static</span> create(attrs = {}) {}
+  <span class="hljs-keyword">static</span> fromJSON(object) {}
+  <span class="hljs-keyword">static</span> toJSON(options = {}) {}
+}
+</code></pre>
+<p>&#x7C7B;&#x4F3C;&#x4E8E; Node Interface&#xFF0C;Slate.js &#x4E5F;&#x662F;&#x901A;&#x8FC7; Element Interface &#x6765;&#x5B9A;&#x4E49; Element &#x5177;&#x5907;&#x7684;&#x80FD;&#x529B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ElementInterface</span> </span>{
+  addMark(path, mark) {}
+
+  getParent(path) {};
+  getPreviousNode(path) {};
+  getNextNode(path) {};
+  findDescendant(predicate = identity) {};
+
+  insertNode(path, node) {}
+  removeNode(path) {}
+
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#x8FD9;&#x4E9B;&#x80FD;&#x529B;&#x901A;&#x8FC7; mixin &#x6CE8;&#x5165;&#x5230; Element &#x4E2D;&#xFF1A;</p>
+<pre><code>mixin(ElementInterface, [Document, Block, Inline]);
+</code></pre><h3 id="text">Text</h3>
+<p align="center">
+  <img src="statics/slate-text-structure.png" width="400">
+</p>
+
+
+<p>&#x7C7B;&#x4F3C;&#x4E8E; HTML Text&#xFF0C;Slate.js &#x4E5F;&#x5B9A;&#x4E49;&#x4E86; Text Model &#x6765;&#x8868;&#x793A;&#x8282;&#x70B9;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>key</code>&#xFF1A;&#x8282;&#x70B9;&#x5728;&#x5F53;&#x524D;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x7D22;&#x5F15;</li>
+<li><code>object</code>&#xFF1A;&#x8282;&#x70B9;&#x7C7B;&#x578B;</li>
+<li><p><code>text</code>&#xFF1A;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF0C;&#x8FD4;&#x56DE;&#x8282;&#x70B9;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;</p>
+</li>
+<li><p><code>leaves</code>: &#x6587;&#x672C;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x4E0D;&#x540C;&#x683C;&#x5F0F;&#xFF08;&#x4F8B;&#x5982;&#x52A0;&#x7C97;&#xFF0C;&#x659C;&#x4F53;&#x7B49;&#xFF09;&#x7684;&#x6587;&#x672C;&#xFF0C;&#x5C06;&#x4F1A;&#x88AB;&#x5206;&#x62C6;&#x4E3A;&#x82E5;&#x5E72;&#x4E2A; leaf</p>
+</li>
+<li><code>marks</code>&#xFF1A;&#x6587;&#x672C;&#x8282;&#x70B9;&#x6240;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709; mark&#xFF08;&#x6807;&#x8BB0;&#xFF09;</li>
+</ul>
+<p>&#x4E0E; Node &#x4E0E; Element &#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;Text &#x4F5C;&#x4E3A;&#x6700;&#x672B;&#x5C42;&#x62BD;&#x8C61;&#xFF0C;&#x80FD;&#x529B;&#x90FD;&#x88AB;&#x5185;&#x805A;&#x5728;&#x4E86; Text Model &#x4E2D;&#x3002;</p>
+<h3 id="mark--leaf">Mark &amp; Leaf</h3>
+<p>&#x5728;&#x6A21;&#x578B;&#x5C42;&#xFF0C;Slate.js &#x662F;&#x901A;&#x8FC7; mark &#x6765;&#x6807;&#x8BB0;&#x6587;&#x672C;&#x683C;&#x5F0F;&#xFF0C;&#x5728;&#x89C6;&#x56FE;&#x5C42;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; CSS &#x6216;&#x8005; <code>&lt;strong&gt;</code> &#x8FD9;&#x6837;&#x7684; tag &#x6765;&#x5C55;&#x793A;&#x683C;&#x5F0F;&#x5316;&#x6587;&#x672C;&#x3002;</p>
+<p>Slate.js  &#x6839;&#x636E; mark &#x7C7B;&#x578B;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x5C06; Text Node &#x62C6;&#x5206;&#x4E3A;&#x4E86;&#x82E5;&#x5E72; Leaf&#x3002;&#x6BCF;&#x4E2A; Leaf &#x5BF9;&#x8C61;&#x542B;&#x6709;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>text: string</code>&#xFF1A;leaf &#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;</li>
+<li><code>mark: Mark</code>: leaf &#x88AB;&#x6807;&#x8BB0;&#x4E0A;&#x7684; mark</li>
+</ul>
+<h3 id="path">Path</h3>
+<p>Slate.js &#x8BBE;&#x8BA1;&#x4E86; Path Model &#x6765;&#x8868;&#x793A;&#x8282;&#x70B9;&#x5728;&#x8282;&#x70B9;&#x6811;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x6570;&#x7EC4;&#xFF0C;&#x5FAA;&#x7740; Path &#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x80FD;&#x627E;&#x5230;&#x8FD9;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x4E0B;&#x4F8B;&#x4E2D;&#xFF0C;<code>[0,1]</code> &#x5C31;&#x8868;&#x793A;&#x4E86; C &#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF1A;</p>
+<p align="center">
+    <img src="statics/slate-path-demo.png" width="300">
+</p>
+
+
+<blockquote>
+<p><code>[]</code> &#x5219;&#x8868;&#x793A;&#x4E86;&#x6839;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;</p>
+</blockquote>
+<h2 id="selection-mirror">Selection Mirror</h2>
+<h3 id="range">Range</h3>
+<p align="center">
+  <img src="statics/mixin-range-interface.png" width="400">
+</p>
+
+
+<p>Slate.js &#x53C2;&#x8003;&#x4E86; DOM Selection &#x548C; DOM Range &#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x8BBE;&#x8BA1;&#x4E86; Range Model &#x4F5C;&#x4E3A;&#x9009;&#x533A;&#x7684;&#x57FA;&#x7840;&#x62BD;&#x8C61;&#xFF0C;&#x5E76;&#x901A;&#x8FC7; Range Interface &#x6CE8;&#x5165;&#x4E86;&#x9009;&#x533A;&#x76F8;&#x5173;&#x80FD;&#x529B;&#x3002;</p>
+<p>Range Model &#x4E5F;&#x91C7;&#x7528; <code>anchor</code>&#x3001;<code>focus</code> &#x6765;&#x63CF;&#x8FF0;&#x4E00;&#x4E2A;&#x7247;&#x6BB5;&#x7684;&#x8D77;&#x7EC8;&#x70B9;&#xFF0C;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#xFF0C;Slate.js &#x8BBE;&#x8BA1;&#x4E86; Point &#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x63CF;&#x8FF0;&#x9009;&#x533A;&#x4F4D;&#x7F6E;&#xFF1A;</p>
+<ul>
+<li><code>anchor</code>&#xFF1A;range &#x8D77;&#x70B9;</li>
+<li><code>focus</code>&#xFF1A;range &#x7EC8;&#x70B9;</li>
+</ul>
+<p align="center">
+  <img src="statics/slate-range.png" width="400">
+</p>
+
+
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5B83;&#x8FD8;&#x5177;&#x6709;&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>end</code> &#x4E0E; <code>start</code>&#xFF1A;&#x5982;&#x679C;&#x8BF4; <code>anchor</code>/<code>focus</code> &#x662F; range &#x7684;&#x300C;&#x4E8B;&#x5B9E;&#x300D;&#x8D77;&#x7EC8;&#x70B9;&#xFF0C;&#x90A3;&#x4E48; <code>start</code>/<code>end</code> &#x5219;&#x662F; range &#x7684;&#x300C;&#x89C6;&#x89C9;&#x300D;&#x8D77;/&#x7EC8;&#x70B9;&#xFF0C;<code>start</code> &#x603B;&#x5728; <code>end</code> &#x4E4B;&#x524D;&#xFF08;&#x6216;&#x8005;&#x4E8C;&#x8005;&#x91CD;&#x53E0;&#xFF09;</li>
+<li><code>isBackward</code> &#x4E0E; <code>isForward</code>&#xFF1A;&#x9009;&#x533A;&#x65B9;&#x5411;&#x662F;&#x5411;&#x524D;&#x8FD8;&#x662F;&#x5411;&#x540E;</li>
+<li><code>isCollapsed</code> &#x4E0E; <code>isExpanded</code>&#xFF1A;&#x662F;&#x5426;&#x6298;&#x53E0;</li>
+<li><code>isSet</code> &#x4E0E; <code>isUnset</code>&#xFF1A;&#x8D77;&#x70B9;&#x7EC8;&#x70B9;&#x662F;&#x5426;&#x5747;&#x88AB;&#x8BBE;&#x7F6E;</li>
+</ul>
+<h3 id="point">Point</h3>
+<p>&#x5728; DOM Selection &#x4E2D;&#xFF0C;&#x901A;&#x8FC7; <code>anchorOffset/focusOffset</code>&#x548C; <code>anchorNode/focusNode</code> &#x6765;&#x6807;&#x8BC6;&#x9009;&#x533A;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF0C;Slate &#x5219;&#x8BBE;&#x8BA1;&#x4E86; Point Model &#x6765;&#x5185;&#x805A; offset &#x548C; node &#x4FE1;&#x606F;&#xFF1A;</p>
+<p align="center">
+  <img src="statics/slate-point-structure.png" width="400">
+</p>
+
+
+<p>&#x4E00;&#x4E2A; Point &#x5BF9;&#x8C61;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>key</code>&#xFF1A;&#x5750;&#x843D;&#x7684; Text Node &#x7684;&#x7D22;&#x5F15;</li>
+<li><code>path</code>&#xFF1A;&#x5750;&#x843D;&#x7684; Text Node &#x4F4D;&#x7F6E;</li>
+<li><code>offset</code>&#xFF1A;&#x5728;&#x5BF9;&#x5E94; Text &#x8282;&#x70B9;&#x4E0A;&#x504F;&#x79FB;&#x4E86;&#x591A;&#x5C11;&#x5B57;&#x7B26;</li>
+</ul>
+<h3 id="selection">Selection</h3>
+<p>Slate.js &#x4E2D;&#x7684; Selection &#x9075;&#x5FAA;&#x4E86;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x4E00;&#x4E2A; Selection &#x5BF9;&#x8C61;&#x4E0D;&#x518D;&#x5141;&#x8BB8;&#x542B;&#x6709;&#x591A;&#x4E2A; Range &#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x542B;&#x6709;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>anchor</code>&#xFF1A;&#x9009;&#x533A;&#x8D77;&#x70B9;</li>
+<li><code>focus</code>: &#x9009;&#x533A;&#x7EC8;&#x70B9;</li>
+<li><code>isFocused</code>: &#x5F53;&#x524D;&#x9009;&#x533A;&#x662F;&#x5426;&#x88AB;&#x805A;&#x7126;</li>
+<li><code>marks</code>&#xFF1A;&#x5F53;&#x524D;&#x9009;&#x533A;&#x5305;&#x542B;&#x7684;&#x6587;&#x672C;&#x683C;&#x5F0F;&#xFF08;&#x6709;&#x52A9;&#x4E8E;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x683C;&#x5F0F;&#x5237;/&#x6E05;&#x9664;&#x683C;&#x5F0F;&#x7B49;&#x529F;&#x80FD;&#xFF09;</li>
+</ul>
+<p align="center">
+    <img src="statics/slate-selection-structure.png" width="400">
+</p>
+
+
+<p>Selection &#x7684;&#x80FD;&#x529B;&#x5219;&#x662F;&#x901A;&#x8FC7; Range Interface &#x6CE8;&#x5165;&#x7684;&#x3002;</p>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<p>&#x4E00;&#x65B9;&#x9762;&#xFF0C;Slate.js &#x5C3D;&#x53EF;&#x80FD;&#x5730;&#x6309;&#x7167;&#x73B0;&#x884C; HTML &#x6807;&#x51C6;&#x53BB;&#x62BD;&#x8C61;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x578B;&#xFF0C;&#x8BA9;&#x4F20;&#x7EDF;&#x7684; Web &#x5E94;&#x7528;&#x5F00;&#x53D1;&#x8005;&#x66F4;&#x52A0;&#x5E73;&#x6ED1;&#x5730;&#x8FC7;&#x5EA6;&#x5230;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x5F00;&#x53D1;&#x4E2D;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;Slate.js &#x4E5F;&#x8F83;&#x4E3A;&#x514B;&#x5236;&#x5730;&#x6269;&#x5C55;&#x4E86; HTML &#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#x8BBE;&#x8BA1;&#x4E86; Point Model &#x6765;&#x8868;&#x793A;&#x5750;&#x6807;&#xFF0C;&#x8BBE;&#x8BA1;&#x4E86; Path Model &#x6765;&#x8868;&#x793A;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;&#x7B49;&#x7B49;&#xFF0C;&#x4EE5;&#x66F4;&#x52A0;&#x8BED;&#x4E49;&#x5316;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x7406;&#x6E05;&#x4E86;&#x9009;&#x533A;&#x548C;&#x8282;&#x70B9;&#x7684;&#x300C;&#x7A7A;&#x95F4;&#x5C5E;&#x6027;&#x300D;&#x3002;</p>
+<p>&#x66F4;&#x65B0;&#x7F16;&#x8F91;&#x5668;&#x5185;&#x5BB9;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x66F4;&#x65B0;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x8282;&#x70B9;&#x6811;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x8981;&#x80FD;&#x591F;&#x627E;&#x5230;&#x5F85;&#x66F4;&#x65B0;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x770B;&#x770B;&#xFF0C;Slate.js &#x4E2D;&#x662F;&#x5982;&#x4F55;&#x5BFB;&#x5740;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rich-text-in-html.html" class="navigation navigation-prev " aria-label="Previous page: HTML 中的富文本">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="path.html" class="navigation navigation-next " aria-label="Next page: 节点寻址">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Slate.js 中的富文本","level":"1.2.2","depth":2,"next":{"title":"节点寻址","level":"1.2.3","depth":2,"path":"path.md","ref":"path.md","articles":[]},"previous":{"title":"HTML 中的富文本","level":"1.2.1","depth":2,"path":"rich-text-in-html.md","ref":"rich-text-in-html.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"rich-text-in-slate.md","mtime":"2020-10-25T14:05:35.555Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-25T02:43:31.911Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

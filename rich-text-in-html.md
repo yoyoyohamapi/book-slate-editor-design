@@ -1,7 +1,8 @@
-# 富文本在 HTML 中的表示
+# HTML 中的富文本
 
-<img src="./statics/minimal-editor-structure.png" alt="编辑器形态" style="zoom: 50%;" />
-
+<p align="center">
+	<img src="./statics/minimal-editor-structure.png" alt="编辑器形态" width="500" />
+</p>
 前文中我们提到，Web 富文本，其实就是一段 HTML 内容，它包含了两个方面：
 
 - __节点（Node）__：节点容纳了我们能看到的富文本内容，富文本容器也是一个节点，容纳了其他节点
@@ -15,7 +16,10 @@
 - 如何为节点绑定额外数据
 - 节点与节点间的关系如何
 
-<img src="./statics/node-design.png" style="zoom:50%;" />
+<p align="center">
+	<img src="./statics/node-design.png" width="500"  />
+</p>
+
 
 ## 节点类型
 
@@ -23,11 +27,17 @@
 
 对于一个网页来说，继承自 Node 的 [Document](https://developer.mozilla.org/zh-CN/docs/Web/API/Document) 就别用来表示网页内容：
 
-<img src="./statics/html-document-tree.png" alt="DOM tree" style="zoom:50%;" />
+<p align="center">
+	<img src="./statics/html-document-tree.png" width="550"  />
+</p>
+
 
 在这颗 DOM 树中，挂载了不同类型的、实现了 [Element Interface](https://developer.mozilla.org/zh-CN/docs/Web/API/Element) 的节点，因此具有描述样式和尺寸的能力：
 
-<img src="./statics/element-extends-node.png" style="zoom: 50%;" />
+<p align="center">
+	<img src="./statics/element-extends-node.png" width="400"  />
+</p>
+
 
 ```js
 Element.classList
@@ -42,17 +52,25 @@ Element.getComputedStyle()
 - **块级元素(Block Level Element)**：块级元素占据了父容器的整个空间，视觉上就是形成了一个 “块”。文档中每新增一个块，首先要新增一个容纳这个块的行。
 - **行内元素(Inline Level Element)**：行内元素只占据了内容所需要的空间。
 
-<img src="./statics/block-contains-inline.png" alt="块级元素包含了行内元素" style="zoom: 50%;" />
+<p align="center">
+	<img src="./statics/block-contains-inline.png" width="450" />
+</p>
+
 
 而在 HTML 5 之后，HTMLElement 的按照[内容类别](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories)进行了细化：
 
-<img src="./statics/html5-flow-category.png" alt="HTML Content Category" style="zoom: 50%;" />
+<p align="center">
+	<img src="./statics/html5-flow-category.png"  width="500" />
+</p>
 
 ## 节点文本
 
 在 HTML 规范中， [Text Interface](https://dom.spec.whatwg.org/#text) 用来表示 Element 的文本内容，它继承自 [CharacterData](https://developer.mozilla.org/zh-CN/docs/Web/API/CharacterData) ，后者用于表示 Node 所包含的字符：
 
-<img src="./statics/text-extends-characterdata.png" style="zoom: 50%;" />
+<p align="center">
+	<img src="./statics/text-extends-characterdata.png" width="500"  />
+</p>
+
 
 我们可以通过 `Document.createTextNode()` 向节点中插入多个 Text，并通过 `Node.textContent` 访问节点的文本：
 
@@ -126,13 +144,18 @@ HTML 的中的选区，涉及了两个位面：
 - Selection：用户视觉上所看到的选区
 - Range：选区内部含有的 DOM 内容
 
-<img src="./statics/selection-contains-range.png" style="zoom:50%;" />
+<p align="center">
+	<img src="./statics/selection-contains-range.png" width="500"  />
+</p>
 
 ## Selection
 
 [选区（Selection）](https://developer.mozilla.org/en-US/docs/Web/API/Selection)表示的是当前用户选中的内容：
 
-<img src="./statics/selection.png" alt="一个选区" style="zoom:67%;" />
+<p align="center">
+	<img src="./statics/selection.png" width="300" />
+</p>
+
 
 上图反映了表示一个选区的信息有：
 
@@ -155,7 +178,10 @@ HTML 的中的选区，涉及了两个位面：
 
 在 DOM 内部，被选中的内容又是怎么表示呢？HTML 标准为此定义了 [Range：](https://developer.mozilla.org/en-US/docs/Web/API/Range)一个 `Range` 对象描述了一个包含若干节点和节点文本的「文档片段」。
 
-<img src="./statics/range.png" style="zoom: 50%;" />
+<p align="center">
+	<img src="./statics/range.png" width="400" />
+</p>
+
 
 一个 Range 同样需要确定起点和终点，他的属性类似于 Selection 对象的属性：
 

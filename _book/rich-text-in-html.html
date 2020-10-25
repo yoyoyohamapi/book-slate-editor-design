@@ -1,0 +1,751 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>HTML 中的富文本 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="rich-text-in-slate.html" />
+    
+    
+    <link rel="prev" href="slate-intro.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    序言：什么是富文本编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="slate-intro.html">
+            
+                <a href="slate-intro.html">
+            
+                    
+                    Slate.js 设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="rich-text-in-html.html">
+            
+                <a href="rich-text-in-html.html">
+            
+                    
+                    HTML 中的富文本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="rich-text-in-slate.html">
+            
+                <a href="rich-text-in-slate.html">
+            
+                    
+                    Slate.js 中的富文本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="path.html">
+            
+                <a href="path.html">
+            
+                    
+                    节点寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="why-immutable.html">
+            
+                <a href="why-immutable.html">
+            
+                    
+                    不可变数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="memorize.html">
+            
+                <a href="memorize.html">
+            
+                    
+                    Memorize
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="how-doese-slate-works.html">
+            
+                <a href="how-doese-slate-works.html">
+            
+                    
+                    Slate.js 是怎么工作的
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="controller.html">
+            
+                <a href="controller.html">
+            
+                    
+                    大脑 - Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    指令系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="operation.html">
+            
+                <a href="operation.html">
+            
+                    
+                    Operation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="plugin.html">
+            
+                <a href="plugin.html">
+            
+                    
+                    插件体系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="normalize.html">
+            
+                <a href="normalize.html">
+            
+                    
+                    Normalize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="decoration.html">
+            
+                <a href="decoration.html">
+            
+                    
+                    Decoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="annotation.html">
+            
+                <a href="annotation.html">
+            
+                    
+                    Annotation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="sync-view-with-data.html">
+            
+                <a href="sync-view-with-data.html">
+            
+                    
+                    模型与视图的同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="slate-ecology.html">
+            
+                <a href="slate-ecology.html">
+            
+                    
+                    Slate.js 生态现状
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="serialize.html">
+            
+                <a href="serialize.html">
+            
+                    
+                    兼容其他格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="test.html">
+            
+                <a href="test.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mobile-editor.html">
+            
+                <a href="mobile-editor.html">
+            
+                    
+                    移动端编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="challenge-and-revolution.md">
+            
+                <span>
+            
+                    
+                    挑战与变革
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="challenge.html">
+            
+                <a href="challenge.html">
+            
+                    
+                    难于完美的编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="slate-050.html">
+            
+                <a href="slate-050.html">
+            
+                    
+                    激进的跃进 - Slate.js 0.50
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="collbarative-editor.md">
+            
+                <span>
+            
+                    
+                    附录 - 协同理论
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="ot.html">
+            
+                <a href="ot.html">
+            
+                    
+                    OT 算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="collaborate-engine.html">
+            
+                <a href="collaborate-engine.html">
+            
+                    
+                    协同调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >HTML 中的富文本</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="html-&#x4E2D;&#x7684;&#x5BCC;&#x6587;&#x672C;">HTML &#x4E2D;&#x7684;&#x5BCC;&#x6587;&#x672C;</h1>
+<p align="center">
+    <img src="statics/minimal-editor-structure.png" alt="&#x7F16;&#x8F91;&#x5668;&#x5F62;&#x6001;" width="500">
+</p>
+&#x524D;&#x6587;&#x4E2D;&#x6211;&#x4EEC;&#x63D0;&#x5230;&#xFF0C;Web &#x5BCC;&#x6587;&#x672C;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x6BB5; HTML &#x5185;&#x5BB9;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x4E86;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#xFF1A;
+
+- __&#x8282;&#x70B9;&#xFF08;Node&#xFF09;__&#xFF1A;&#x8282;&#x70B9;&#x5BB9;&#x7EB3;&#x4E86;&#x6211;&#x4EEC;&#x80FD;&#x770B;&#x5230;&#x7684;&#x5BCC;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF0C;&#x5BCC;&#x6587;&#x672C;&#x5BB9;&#x5668;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5BB9;&#x7EB3;&#x4E86;&#x5176;&#x4ED6;&#x8282;&#x70B9;
+- __&#x9009;&#x533A;&#xFF08;Selection&#xFF09;__&#xFF1A;&#x5F53;&#x524D;&#x9009;&#x4E2D;&#x7684;&#x533A;&#x57DF;&#xFF0C;&#x5982;&#x679C;&#x533A;&#x57DF;&#x7684;&#x8D77;&#x70B9;&#x548C;&#x7EC8;&#x70B9;&#x91CD;&#x5408;&#xFF0C;&#x90A3;&#x770B;&#x5230;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5149;&#x6807;
+
+# &#x8282;&#x70B9;
+
+&#x5BCC;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8003;&#x8651;&#xFF1A;
+
+- &#x6709;&#x54EA;&#x4E9B;&#x7C7B;&#x578B;&#x7684;&#x8282;&#x70B9;
+- &#x5982;&#x4F55;&#x4E3A;&#x8282;&#x70B9;&#x7ED1;&#x5B9A;&#x989D;&#x5916;&#x6570;&#x636E;
+- &#x8282;&#x70B9;&#x4E0E;&#x8282;&#x70B9;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x5982;&#x4F55;
+
+<p align="center">
+    <img src="statics/node-design.png" width="500">
+</p>
+
+
+<h2 id="&#x8282;&#x70B9;&#x7C7B;&#x578B;">&#x8282;&#x70B9;&#x7C7B;&#x578B;</h2>
+<p>&#x5728; HTML &#x73B0;&#x884C;&#x89C4;&#x8303;&#x4E2D;&#xFF0C;<a href="https://dom.spec.whatwg.org/#interface-node" target="_blank">&#x8282;&#x70B9;&#xFF08;Node&#xFF09;</a>&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A; Node Interface&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x57FA;&#x7C7B;&#xFF0C;&#x7EE7;&#x627F;&#x81EA; Node Interface &#x7684;&#x7C7B;&#x5C06;&#x5177;&#x5907;&#x8BBF;&#x95EE;&#x8282;&#x70B9;&#x5C5E;&#x6027;&#x3001;&#x4FEE;&#x6539;&#x8282;&#x70B9;&#x7ED3;&#x6784;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#x6765;&#x8BF4;&#xFF0C;&#x7EE7;&#x627F;&#x81EA; Node &#x7684; <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document" target="_blank">Document</a> &#x5C31;&#x522B;&#x7528;&#x6765;&#x8868;&#x793A;&#x7F51;&#x9875;&#x5185;&#x5BB9;&#xFF1A;</p>
+<p align="center">
+    <img src="statics/html-document-tree.png" width="550">
+</p>
+
+
+<p>&#x5728;&#x8FD9;&#x9897; DOM &#x6811;&#x4E2D;&#xFF0C;&#x6302;&#x8F7D;&#x4E86;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x3001;&#x5B9E;&#x73B0;&#x4E86; <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element" target="_blank">Element Interface</a> &#x7684;&#x8282;&#x70B9;&#xFF0C;&#x56E0;&#x6B64;&#x5177;&#x6709;&#x63CF;&#x8FF0;&#x6837;&#x5F0F;&#x548C;&#x5C3A;&#x5BF8;&#x7684;&#x80FD;&#x529B;&#xFF1A;</p>
+<p align="center">
+    <img src="statics/element-extends-node.png" width="400">
+</p>
+
+
+<pre><code class="lang-js">Element.classList
+Element.styles
+Element.clientHeight
+Element.getBoundingClientRect()
+Element.getComputedStyle()
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5E38;&#x89C1;&#x7684; <code>div</code>&#x3001;<code>p</code>&#x3001;<code>span</code> &#x7B49;&#x90FD;&#x7EE7;&#x627F;&#x81EA; <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement" target="_blank">HTMLElement</a>&#xFF08;&#x5B83;&#x7EE7;&#x627F;&#x81EA; Element&#xFF09;&#x3002;&#x5728; HTML 5 &#x4E4B;&#x524D;&#xFF0C;HTMLElement &#x88AB;&#x5206;&#x4E3A;&#x4E86;:</p>
+<ul>
+<li><strong>&#x5757;&#x7EA7;&#x5143;&#x7D20;(Block Level Element)</strong>&#xFF1A;&#x5757;&#x7EA7;&#x5143;&#x7D20;&#x5360;&#x636E;&#x4E86;&#x7236;&#x5BB9;&#x5668;&#x7684;&#x6574;&#x4E2A;&#x7A7A;&#x95F4;&#xFF0C;&#x89C6;&#x89C9;&#x4E0A;&#x5C31;&#x662F;&#x5F62;&#x6210;&#x4E86;&#x4E00;&#x4E2A; &#x201C;&#x5757;&#x201D;&#x3002;&#x6587;&#x6863;&#x4E2D;&#x6BCF;&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x5757;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x5BB9;&#x7EB3;&#x8FD9;&#x4E2A;&#x5757;&#x7684;&#x884C;&#x3002;</li>
+<li><strong>&#x884C;&#x5185;&#x5143;&#x7D20;(Inline Level Element)</strong>&#xFF1A;&#x884C;&#x5185;&#x5143;&#x7D20;&#x53EA;&#x5360;&#x636E;&#x4E86;&#x5185;&#x5BB9;&#x6240;&#x9700;&#x8981;&#x7684;&#x7A7A;&#x95F4;&#x3002;</li>
+</ul>
+<p align="center">
+    <img src="statics/block-contains-inline.png" width="450">
+</p>
+
+
+<p>&#x800C;&#x5728; HTML 5 &#x4E4B;&#x540E;&#xFF0C;HTMLElement &#x7684;&#x6309;&#x7167;<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories" target="_blank">&#x5185;&#x5BB9;&#x7C7B;&#x522B;</a>&#x8FDB;&#x884C;&#x4E86;&#x7EC6;&#x5316;&#xFF1A;</p>
+<p align="center">
+    <img src="statics/html5-flow-category.png" width="500">
+</p>
+
+<h2 id="&#x8282;&#x70B9;&#x6587;&#x672C;">&#x8282;&#x70B9;&#x6587;&#x672C;</h2>
+<p>&#x5728; HTML &#x89C4;&#x8303;&#x4E2D;&#xFF0C; <a href="https://dom.spec.whatwg.org/#text" target="_blank">Text Interface</a> &#x7528;&#x6765;&#x8868;&#x793A; Element &#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF0C;&#x5B83;&#x7EE7;&#x627F;&#x81EA; <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/CharacterData" target="_blank">CharacterData</a> &#xFF0C;&#x540E;&#x8005;&#x7528;&#x4E8E;&#x8868;&#x793A; Node &#x6240;&#x5305;&#x542B;&#x7684;&#x5B57;&#x7B26;&#xFF1A;</p>
+<p align="center">
+    <img src="statics/text-extends-characterdata.png" width="500">
+</p>
+
+
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>Document.createTextNode()</code> &#x5411;&#x8282;&#x70B9;&#x4E2D;&#x63D2;&#x5165;&#x591A;&#x4E2A; Text&#xFF0C;&#x5E76;&#x901A;&#x8FC7; <code>Node.textContent</code> &#x8BBF;&#x95EE;&#x8282;&#x70B9;&#x7684;&#x6587;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+
+element.appendChild(<span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">&apos;1 &apos;</span>));
+element.appendChild(<span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">&apos;2 &apos;</span>));
+element.appendChild(<span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">&apos;3 &apos;</span>));
+
+element.childNodes; <span class="hljs-comment">// NodeList [text, text, text]</span>
+element.textContent; <span class="hljs-comment">// 1 2 3</span>
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;&#x591A;&#x4E2A;&#x76F8;&#x90BB;&#x7684;&#x6587;&#x672C;&#x8282;&#x70B9;&#xFF0C;&#x4EE5;&#x901A;&#x8FC7; <code>Node.normalize()</code> &#x8FD8;&#x53EF;&#x4EE5;&#x8BA9;&#x8FD9;&#x4E9B;&#x6587;&#x672C;&#x8282;&#x70B9;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x8282;&#x70B9;&#xFF1A;</p>
+<pre><code class="lang-js">element.normalize();
+
+element.childNodes; <span class="hljs-comment">// NodeList [text]</span>
+element.textContent; <span class="hljs-comment">// 1 2 3</span>
+</code></pre>
+<p><a href="https://developer.mozilla.org/en-US/docs/Glossary/Empty_element" target="_blank">Void Element&#xFF08;&#x7A7A;&#x8282;&#x70B9;&#xFF09;</a>&#xFF0C;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A; Empty Element&#xFF0C;&#x662F;&#x4E00;&#x7C7B;&#x7279;&#x6B8A;&#x7684; HTML Element&#xFF0C;&#x5B83;&#x4E0D;&#x5141;&#x8BB8;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x8BF8;&#x5982; <code>&lt;input /&gt;</code>&#x3001;<code>&lt;link /&gt;</code> &#x7B49;&#x90FD;&#x662F; Void Element&#xFF0C;&#x5C1D;&#x8BD5;&#x6CE8;&#x5165;&#x5185;&#x5BB9;&#x5230; Void Element &#x662F;&#x65E0;&#x6548;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;12345&quot;</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://this-is-an-image.jpg&quot;</span>&gt;</span>Image<span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<h2 id="&#x8282;&#x70B9;&#x6570;&#x636E;">&#x8282;&#x70B9;&#x6570;&#x636E;</h2>
+<p>&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x542B;&#x6709;&#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF0C;&#x8FD8;&#x80FD;&#x7ED1;&#x5B9A;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x6570;&#x636E;&#x3002;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E3A;&#x56FE;&#x7247;&#x8282;&#x70B9;&#x8BBE;&#x7F6E;&#x56FE;&#x7247;&#x6E90;&#x548C;&#x5C3A;&#x5BF8;&#x4FE1;&#x606F;&#xFF0C;HTML <code>img</code> tag &#x4E3A;&#x6B64;&#x63D0;&#x4F9B;&#x4E86; <code>src</code> &#x3001;<code>width</code>&#x3001;<code>height</code> &#x7B49;&#x5C5E;&#x6027;&#x3002;&#x66F4;&#x4E00;&#x822C;&#x5730;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>data-*</code> &#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x7684;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>
+  <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;code-block&quot;</span>
+  <span class="hljs-attr">data-syntax</span>=<span class="hljs-string">&quot;javascript&quot;</span>
+  <span class="hljs-attr">data-theme</span>=<span class="hljs-string">&quot;dracula&quot;</span>
+/&gt;</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>HTMLElement.dataset.xxx</code> &#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> code = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;code-block&quot;</span>);
+
+code.dataset.syntax; <span class="hljs-comment">// javascript</span>
+code.dataset.theme; <span class="hljs-comment">// dracula</span>
+</code></pre>
+<h2 id="&#x8282;&#x70B9;&#x5173;&#x7CFB;">&#x8282;&#x70B9;&#x5173;&#x7CFB;</h2>
+<p>&#x4E00;&#x7BC7; HTML &#x6587;&#x6863;&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x4E00;&#x68F5; DOM &#x6811;&#x6240;&#x6807;&#x8BC6;&#xFF0C;DOM &#x6811;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x53C8;&#x662F;&#x4E00;&#x4E2A; DOM &#x5B50;&#x6811;&#xFF0C;&#x6811;&#x8282;&#x70B9;&#x5C31;&#x5B58;&#x5728;&#x300C;&#x7956;&#x5148;&#x3001;&#x5B69;&#x5B50;&#x3001;&#x5144;&#x5F1F;&#x300D;&#x7684;&#x5173;&#x7CFB;&#x3002;HTML &#x89C4;&#x8303;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7; Node Interface &#x5B9A;&#x4E49;&#x4E86;&#x8BBF;&#x95EE;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x7236;&#x8282;&#x70B9;&#x3001;&#x5B69;&#x5B50;&#x8282;&#x70B9;&#x4EE5;&#x53CA;&#x5144;&#x5F1F;&#x8282;&#x70B9;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-js">Node.parentNode;
+Node.childNodes;
+Node.previsousSibling;
+Node.nextSibling;
+</code></pre>
+<p>&#x8FD9;&#x4E9B; API &#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x5B9A;&#x4F4D;&#x5230;&#x6811;&#x91CC;&#x9762;&#x7684;&#x67D0;&#x4E2A;&#x8282;&#x70B9;&#x3002;</p>
+<h1 id="&#x9009;&#x533A;">&#x9009;&#x533A;</h1>
+<p>HTML &#x7684;&#x4E2D;&#x7684;&#x9009;&#x533A;&#xFF0C;&#x6D89;&#x53CA;&#x4E86;&#x4E24;&#x4E2A;&#x4F4D;&#x9762;&#xFF1A;</p>
+<ul>
+<li>Selection&#xFF1A;&#x7528;&#x6237;&#x89C6;&#x89C9;&#x4E0A;&#x6240;&#x770B;&#x5230;&#x7684;&#x9009;&#x533A;</li>
+<li>Range&#xFF1A;&#x9009;&#x533A;&#x5185;&#x90E8;&#x542B;&#x6709;&#x7684; DOM &#x5185;&#x5BB9;</li>
+</ul>
+<p align="center">
+    <img src="statics/selection-contains-range.png" width="500">
+</p>
+
+<h2 id="selection">Selection</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Selection" target="_blank">&#x9009;&#x533A;&#xFF08;Selection&#xFF09;</a>&#x8868;&#x793A;&#x7684;&#x662F;&#x5F53;&#x524D;&#x7528;&#x6237;&#x9009;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
+<p align="center">
+    <img src="statics/selection.png" width="300">
+</p>
+
+
+<p>&#x4E0A;&#x56FE;&#x53CD;&#x6620;&#x4E86;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x9009;&#x533A;&#x7684;&#x4FE1;&#x606F;&#x6709;&#xFF1A;</p>
+<ul>
+<li>&#x9009;&#x533A;&#x7684;&#x8D77;&#x70B9;&#xFF1A;&#x8D77;&#x70B9;&#x53CD;&#x6620;&#x4E86;&#x9009;&#x533A;&#x4ECE;&#x54EA;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x54EA;&#x4E2A;&#x504F;&#x79FB;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;</li>
+<li>&#x9009;&#x533A;&#x7684;&#x7EC8;&#x70B9;&#xFF1A;&#x7EC8;&#x70B9;&#x53CD;&#x6620;&#x4E86;&#x9009;&#x533A;&#x4ECE;&#x54EA;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x54EA;&#x4E2A;&#x504F;&#x79FB;&#x4F4D;&#x7F6E;&#x7ED3;&#x675F;</li>
+</ul>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5728; HTML &#x4E2D;&#xFF0C;&#x901A;&#x8FC7; <code>window.getSelection()</code> &#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x7684; <code>Selection</code> &#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x542B;&#x6709;&#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>anchorNode</code>&#xFF1A;&#x9009;&#x533A;&#x7684;&#x8D77;&#x59CB;&#x8282;&#x70B9;</li>
+<li><code>anchorOffset</code>&#xFF1A;&#x9009;&#x533A;&#x8D77;&#x70B9;&#x5728;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x504F;&#x79FB;</li>
+<li><code>focusNode</code>&#xFF1A;&#x9009;&#x533A;&#x7EC8;&#x70B9;</li>
+<li><code>focusOffset</code>&#xFF1A;&#x9009;&#x533A;&#x7EC8;&#x70B9;&#x5728;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x504F;&#x79FB;</li>
+<li><code>isCollpased</code>&#xFF1A;&#x9009;&#x533A;&#x662F;&#x5426;&#x6298;&#x53E0;</li>
+</ul>
+<p>&#x9009;&#x533A;&#x7684;&#x65B9;&#x5411;&#x5219;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; anchor&#x3001;focus &#x7684;&#x4F4D;&#x7F6E;&#x5224;&#x5B9A;&#xFF0C;&#x82E5; focus &#x843D;&#x5728; anchor &#x4E4B;&#x540E;&#xFF0C;&#x4E3A;&#x5411;&#x540E;&#x9009;&#x62E9;&#xFF0C;&#x82E5;&#x843D;&#x5728; anchor &#x4E4B;&#x524D;&#xFF0C;&#x5219;&#x4E3A;&#x5411;&#x524D;&#x9009;&#x62E9;&#xFF0C;&#x4E8C;&#x8005;&#x91CD;&#x53E0;&#x65F6;&#xFF0C;&#x5373;&#x9009;&#x533A;&#x88AB;&#x6298;&#x53E0;&#xFF0C;&#x7528;&#x6237;&#x89C6;&#x89C9;&#x4E0A;&#x770B;&#x5230;&#x7684;&#x5C31;&#x662F;&#x5149;&#x6807;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>window.getSelection()</code> &#x83B7;&#x5F97;&#x5F53;&#x524D;&#x9009;&#x533A;&#x3002;</p>
+<h2 id="range">Range</h2>
+<p>&#x5728; DOM &#x5185;&#x90E8;&#xFF0C;&#x88AB;&#x9009;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x53C8;&#x662F;&#x600E;&#x4E48;&#x8868;&#x793A;&#x5462;&#xFF1F;HTML &#x6807;&#x51C6;&#x4E3A;&#x6B64;&#x5B9A;&#x4E49;&#x4E86; <a href="https://developer.mozilla.org/en-US/docs/Web/API/Range" target="_blank">Range&#xFF1A;</a>&#x4E00;&#x4E2A; <code>Range</code> &#x5BF9;&#x8C61;&#x63CF;&#x8FF0;&#x4E86;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x82E5;&#x5E72;&#x8282;&#x70B9;&#x548C;&#x8282;&#x70B9;&#x6587;&#x672C;&#x7684;&#x300C;&#x6587;&#x6863;&#x7247;&#x6BB5;&#x300D;&#x3002;</p>
+<p align="center">
+    <img src="statics/range.png" width="400">
+</p>
+
+
+<p>&#x4E00;&#x4E2A; Range &#x540C;&#x6837;&#x9700;&#x8981;&#x786E;&#x5B9A;&#x8D77;&#x70B9;&#x548C;&#x7EC8;&#x70B9;&#xFF0C;&#x4ED6;&#x7684;&#x5C5E;&#x6027;&#x7C7B;&#x4F3C;&#x4E8E; Selection &#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>collapsed</code>&#xFF1A;Range &#x662F;&#x5426;&#x88AB;&#x6298;&#x53E0;</li>
+<li><code>commonAncestorContainer</code>&#xFF1A;&#x9009;&#x533A;&#x8D77;&#x70B9;&#x3001;&#x7EC8;&#x70B9;&#x516C;&#x5171;&#x7684;&#x7236;&#x8282;&#x70B9;</li>
+<li><code>startContainer</code>&#xFF1A;&#x9009;&#x533A;&#x8D77;&#x70B9;&#x6240;&#x5728;&#x7684;&#x8282;&#x70B9;</li>
+<li><code>startOffset</code>&#xFF1A;&#x9009;&#x533A;&#x8D77;&#x70B9;&#x5728;&#x8282;&#x70B9;&#x4E2D;&#x504F;&#x79FB;</li>
+<li><code>endContainer</code>&#xFF1A;&#x9009;&#x533A;&#x7EC8;&#x70B9;&#x6240;&#x5728;&#x7684;&#x8282;&#x70B9;</li>
+<li><code>endOffset</code>&#xFF1A;&#x9009;&#x533A;&#x7EC8;&#x70B9;&#x5728;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x504F;&#x79FB;</li>
+</ul>
+<p>Selection &#x6700;&#x65E9;&#x662F;&#x4F5C;&#x4E3A; Netscape &#x6D4F;&#x89C8;&#x5668;&#x7684;&#x7279;&#x6027;&#x88AB;&#x5F15;&#x5165;&#xFF0C;&#x4E4B;&#x540E;&#x53C8;&#x88AB; Firefox &#x7684; Gecko &#x5F15;&#x64CE;&#x6240;&#x5B9E;&#x73B0;&#xFF0C;&#x6700;&#x540E;&#x9646;&#x7EED;&#x88AB;&#x5176;&#x4ED6;&#x6D4F;&#x89C8;&#x5668;&#x6240;&#x5B9E;&#x73B0;&#x3002;Netscape &#x5C06; Selection &#x5B9E;&#x73B0;&#x4E3A;&#x4E86;&#x7531;&#x591A;&#x4E2A; Range &#x6240;&#x6784;&#x6210;&#xFF0C;&#x8FD9;&#x770B;&#x4F3C;&#x5408;&#x4E4E;&#x8BED;&#x4E49;&#xFF0C;&#x4E00;&#x4E2A;&#x9009;&#x533A;&#x5E94;&#x5F53;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x6587;&#x6863;&#x7247;&#x6BB5;&#x3002;&#x5047;&#x8BBE;&#x7528;&#x6237;&#x60F3;&#x540C;&#x65F6;&#x9009;&#x4E2D;&#x4E00;&#x4E2A;&#x8868;&#x683C;&#x7684;&#x82E5;&#x5E72;&#x5217;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BBE;&#x8BA1;&#x5C31;&#x662F;&#x5FC5;&#x8981;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5F00;&#x53D1;&#x8005;&#x56E0;&#x6B64;&#x8981;&#x5E94;&#x4ED8;&#x8BB8;&#x8BB8;&#x591A;&#x591A;&#x8FB9;&#x754C;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x73B0;&#x5728;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x5728;&#x5B9E;&#x73B0; Selection &#x65F6;&#xFF0C;&#x4E0D;&#x518D;&#x5141;&#x8BB8;&#x4E00;&#x4E2A; Selection &#x5305;&#x542B;&#x591A;&#x4E2A; Range&#xFF0C;&#x8003;&#x8651;&#x5230;&#x5411;&#x540E;&#x517C;&#x5BB9; API&#xFF0C;&#x8FD8;&#x662F;&#x4E3A; Selection &#x652F;&#x6301;&#x4E86; <code>removeRange()</code>&#x3001;<code>getRangeAt()</code> &#x7B49;&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x662F;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B; API &#x65F6;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x53EA;&#x80FD;&#x4F20;&#x5165; 0 &#x4F5C;&#x4E3A; index &#x64CD;&#x4F5C;&#x7B2C;&#x4E00;&#x4E2A;&#x4E5F;&#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A; Range &#x5BF9;&#x8C61;&#x3002;</p>
+<h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
+<ul>
+<li><a href="https://www.w3.org/TR/selection-api/#background" target="_blank">W3C Working Draft - Selection API</a></li>
+<li><a href="https://dom.spec.whatwg.org/#interface-node" target="_blank">DOM Living Standard</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="slate-intro.html" class="navigation navigation-prev " aria-label="Previous page: Slate.js 设计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="rich-text-in-slate.html" class="navigation navigation-next " aria-label="Next page: Slate.js 中的富文本">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"HTML 中的富文本","level":"1.2.1","depth":2,"next":{"title":"Slate.js 中的富文本","level":"1.2.2","depth":2,"path":"rich-text-in-slate.md","ref":"rich-text-in-slate.md","articles":[]},"previous":{"title":"Slate.js 设计","level":"1.2","depth":1,"path":"slate-intro.md","ref":"slate-intro.md","articles":[{"title":"HTML 中的富文本","level":"1.2.1","depth":2,"path":"rich-text-in-html.md","ref":"rich-text-in-html.md","articles":[]},{"title":"Slate.js 中的富文本","level":"1.2.2","depth":2,"path":"rich-text-in-slate.md","ref":"rich-text-in-slate.md","articles":[]},{"title":"节点寻址","level":"1.2.3","depth":2,"path":"path.md","ref":"path.md","articles":[]},{"title":"不可变数据","level":"1.2.4","depth":2,"path":"why-immutable.md","ref":"why-immutable.md","articles":[]},{"title":"Memorize","level":"1.2.5","depth":2,"path":"memorize.md","ref":"memorize.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"rich-text-in-html.md","mtime":"2020-10-25T02:46:26.718Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-25T02:43:31.911Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

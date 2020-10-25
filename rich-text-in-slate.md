@@ -1,12 +1,16 @@
-# 富文本在 Slate.js 中的表示
+# Slate.js 中的富文本
 
 Slate.js 在数据模型的设计宗旨是 「Mirror the DOM」，即尽可能按照现行的 DOM 标准去抽象自己的数据模型。这种亲近现行标准的设计理念，降低了开发者接入编辑器的知识负担：我熟悉 HTML ，就能很快上手 Slate.js。
 
 我们分别从对节点和选区的设计上，看看 Slate.js 是怎么模拟 DOM 的。
 
-<img src="/Users/wuxiaojun/Projects/books/book-slate-editor-design/statics/slate-value-structure.png" style="zoom: 50%;" />
+<p align="center">
+  <img src="./statics/slate-value-structure.png" width="250"  />
+</p>
 
-## Mirror Node
+
+
+## Node Mirror
 
 在 Slate.js 中，同样区分了：
 
@@ -16,7 +20,9 @@ Slate.js 在数据模型的设计宗旨是 「Mirror the DOM」，即尽可能�
 
 ### Node
 
-<img src="/Users/wuxiaojun/Projects/books/book-slate-editor-design/statics/mixin-node-interface.png" style="zoom: 50%;" />
+<p align="center">
+	<img src="./statics/mixin-node-interface.png" width="500"  />
+</p>
 
 类似于 DOM，Slate.js 同样使用 Node 作为基础抽象，因此，它也需要考虑：
 
@@ -65,7 +71,10 @@ minxin(NodeInterface, [Document, Block, Inline, Text]);
 
 ## Element
 
-<img src="/Users/wuxiaojun/Projects/books/book-slate-editor-design/statics/mixin-element-interface.png" style="zoom: 50%;" />
+<p align="center">
+  <img src="./statics/mixin-element-interface.png" width="400" />
+</p>
+
 
 类似于 HTML Element，Slate.js 将节点类型分为：
 
@@ -117,7 +126,10 @@ mixin(ElementInterface, [Document, Block, Inline]);
 
 ### Text
 
-<img src="/Users/wuxiaojun/Projects/books/book-slate-editor-design/statics/slate-text-structure.png" style="zoom: 50%;" />
+<p align="center">
+  <img src="./statics/slate-text-structure.png" width="400"  />
+</p>
+
 
 类似于 HTML Text，Slate.js 也定义了 Text Model 来表示节点的文本内容，它具有这些属性：
 
@@ -143,15 +155,21 @@ Slate.js  根据 mark 类型的不同，将 Text Node 拆分为了若干 Leaf。
 
 Slate.js 设计了 Path Model 来表示节点在节点树中的位置，它是一个数值数组，循着 Path 的每个元素，我们就能找到这个节点。下例中，`[0,1]` 就表示了 C 节点的位置：
 
-<img src="./statics/slate-path-demo.png" style="zoom:50%;" />
+<p align="center">
+	<img src="./statics/slate-path-demo.png" width="300"  />
+</p>
+
 
 > `[]` 则表示了根节点的位置
 
-## Mirror Selection
+## Selection Mirror
 
 ### Range
 
-<img src="/Users/wuxiaojun/Projects/books/book-slate-editor-design/statics/mixin-range-interface.png" style="zoom: 50%;" />
+<p align="center">
+  <img src="./statics/mixin-range-interface.png" width="400" />
+</p>
+
 
 Slate.js 参考了 DOM Selection 和 DOM Range 的设计，设计了 Range Model 作为选区的基础抽象，并通过 Range Interface 注入了选区相关能力。
 
@@ -160,7 +178,10 @@ Range Model 也采用 `anchor`、`focus` 来描述一个片段的起终点，更
 - `anchor`：range 起点
 - `focus`：range 终点
 
-<img src="/Users/wuxiaojun/Projects/books/book-slate-editor-design/statics/slate-range.png" style="zoom: 50%;" />
+<p align="center">
+  <img src="./statics/slate-range.png" width="400" />
+</p>
+
 
 另外，它还具有下面这些计算属性：
 
@@ -173,7 +194,10 @@ Range Model 也采用 `anchor`、`focus` 来描述一个片段的起终点，更
 
 在 DOM Selection 中，通过 `anchorOffset/focusOffset`和 `anchorNode/focusNode` 来标识选区的起始位置，Slate 则设计了 Point Model 来内聚 offset 和 node 信息：
 
-<img src="/Users/wuxiaojun/Projects/books/book-slate-editor-design/statics/slate-point-structure.png" style="zoom: 50%;" />
+<p align="center">
+  <img src="./statics/slate-point-structure.png" width="400"  />
+</p>
+
 
 一个 Point 对象具有如下属性：
 
@@ -190,7 +214,10 @@ Slate.js 中的 Selection 遵循了现代浏览器的设计，一个 Selection �
 - `isFocused`: 当前选区是否被聚焦
 - `marks`：当前选区包含的文本格式（有助于我们实现格式刷/清除格式等功能）
 
-<img src="./statics/slate-selection-structure.png" style="zoom:50%;" />
+<p align="center">
+	<img src="./statics/slate-selection-structure.png" width="400" />
+</p>
+
 
 Selection 的能力则是通过 Range Interface 注入的。
 

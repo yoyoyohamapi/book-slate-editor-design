@@ -1,0 +1,12 @@
+{
+  "name": "deep-in-slate",
+  "version": "0.1.0",
+  "description": "Deep in Slate.js",
+  "main": "index.js",
+  "repository": "https://github.com/yoyoyohamapi/book-slate-editor-design.git",
+  "author": "yoyoyohamapi <472285740@qq.com>",
+  "license": "MIT",
+  "resolutions": {
+    "**/graceful-fs": "^4.2.4"
+  }
+}

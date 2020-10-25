@@ -19,7 +19,10 @@ memoize(NodeInterface.prototype, [
 
 Slate.js 通过 [WeakMap]() 创建了对象的函数缓存，每个对象的缓存包含了「有参数调用」和「无参数调用」函数两个 hash map。特别地，对于有参数调用，memoize 需要考虑为不同的参数集合设置不一样的缓存，并且，所有以对象为参数的缓存，都用 WeakMap 构建。
 
-<img src="./statics/slate-memoize.png" style="zoom: 67%;" />
+<p align="center">
+	<img src="./statics/slate-memoize.png" />
+</p>
+
 
 我们用一个简单地例子来理解 Slate.js memoize 的结构：
 
@@ -78,7 +81,7 @@ const cache = {
 }
 ```
 
-假设我们不再使用 `foo` 或者 `bar` 了，由于缓存也仍引用着它们，导致 GC（垃圾回收）认为对象仍在使用，无法回收引用的资源，从而造成内存泄漏:
+假设我们不再使用 `foo` 或者 `bar` 了，但由于缓存仍引用着它们，导致 GC（垃圾回收）认为对象仍在使用，无法回收引用的资源，从而造成内存泄漏:
 
 ```js
 foo = null
@@ -97,7 +100,9 @@ foo = null
 weakMap.has(foo); // false
 ```
 
-<img src="./statics/weak-reference.png" style="zoom: 50%;" />
+<p align="center">
+	<img src="./statics/weak-reference.png" width="500"  />
+</p>
 
 ## 参考资料
 
