@@ -179,7 +179,7 @@ his name was <strong><em><cursor />Baggins</em></strong>
   <img src="./statics/wechat.jpg" width="200"/>
 </p>
 
-和我之前创作的任何小册一样，我从不索取点赞和咖啡赞赏，博客创作只是我自我总结，验证的手段之一，我更期望读者能发现文章中的问题，或者提供实践中不一样的思路，并通过 Issue 反馈给我，那么你来杭州或者成都，我请你喝咖啡。
+和我之前创作的任何小册一样，我从不索取点赞和咖啡赞赏，博客创作只是我自我总结，验证的手段之一，我更期望读者能发现文章中的问题，或者提供实践中不一样的思路，并通过 [Issues](https://github.com/yoyoyohamapi/book-slate-editor-design/issues) 反馈给我，那么你来杭州或者成都，我请你喝咖啡。
 
 ## 参考资料
 
