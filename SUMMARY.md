@@ -1,6 +1,7 @@
 # Deep in Slate.js
 
 * [Deep in Slate.js](README.md)
+* [Web 富文本编辑器简史](./history.md)
 * [Slate.js 设计](slate-intro.md)
   * [HTML 中的富文本](rich-text-in-html.md)
   * [Slate.js 中的富文本](rich-text-in-slate.md)
@@ -16,6 +17,10 @@
   * [Decoration](decoration.md)
   * [Annotation](annotation.md)
   * [模型与视图的同步](sync-view-with-data.md)
+* [Tiny Slate.js：实现一个 Mini Slate.js](./tiny-the-slate.md)
+  * [设计数据结构](tiny-design-data-structure.md)
+  * [设计 Controller](./tiny-controller.md)
+  * [实现编辑器组件](./tiny-editor-component.md)
 
 - [Slate.js 生态现状](slate-ecology.md)
   - [兼容其他格式](serialize.md)
@@ -28,3 +33,5 @@
 - [附录 - 协同理论](collbarative-editor.md)
   - [OT 算法](ot.md)
   - [协同调度](collaborate-engine.md)
+
+- [关于作者](author.md)
