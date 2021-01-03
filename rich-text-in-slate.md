@@ -2,20 +2,18 @@
 
 Slate.js 在数据模型的设计宗旨是 「Mirror the DOM」，即尽可能按照现行的 DOM 标准去抽象自己的数据模型。这种亲近现行标准的设计理念，降低了开发者接入编辑器的知识负担：我熟悉 HTML ，就能很快上手 Slate.js。
 
-我们分别从对节点和选区的设计上，看看 Slate.js 是怎么模拟 DOM 的。
+我们分别从对节点和选区的设计上，看看 Slate.js 是怎么模拟 DOM 的。。
 
 <p align="center">
   <img src="./statics/slate-value-structure.png" width="250"  />
 </p>
 
-
-
-## Node Mirror
+## Node 设计
 
 在 Slate.js 中，同样区分了：
 
 - Node：最高级的抽象，包含了访问节点和节点内容的方法
-- Element：表示节点容器的 Node，Slate.js 含有 Document、Block 和 Inline 三种类型的 Element
+- Element：表示节点容器的 Node。Slate.js 含有 Document、Block 和 Inline 三种类型的 Element
 - Text：表示节点文本内容的 Node
 
 ### Node
@@ -63,7 +61,7 @@ class NodeInterface {
 }
 ```
 
-Slate.js 通过 mixin 的方式，将这些能力注入到 Node Model 中：
+通过 mixin 的方式，这些能力被注入到 Node Model 中：
 
 ```javascript
 minxin(NodeInterface, [Document, Block, Inline, Text]);
@@ -74,7 +72,6 @@ minxin(NodeInterface, [Document, Block, Inline, Text]);
 <p align="center">
   <img src="./statics/mixin-element-interface.png" width="400" />
 </p>
-
 
 类似于 HTML Element，Slate.js 将节点类型分为：
 
@@ -100,25 +97,25 @@ class Document {
 }
 ```
 
-类似于 Node Interface，Slate.js 也是通过 Element Interface 来定义 Element 具备的能力：
+类似于 Node Interface，Slate.js 也是通过 Element Interface 来定义 Element 具备的能力，例如修改节点，访问节点祖先等等，
 
 ```js
 class ElementInterface {
   addMark(path, mark) {}
-  
-  getParent(path) {};
-  getPreviousNode(path) {};
-  getNextNode(path) {};
-  findDescendant(predicate = identity) {};
-  
+
+  getParent(path) {}
+  getPreviousNode(path) {}
+  getNextNode(path) {}
+  findDescendant(predicate = identity) {}
+
   insertNode(path, node) {}
   removeNode(path) {}
-  
+
   // ...
 }
 ```
 
-这些能力通过 mixin 注入到 Element 中：
+通过 mixin， 这些能力被注入到 Element 中：
 
 ```
 mixin(ElementInterface, [Document, Block, Inline]);
@@ -130,13 +127,11 @@ mixin(ElementInterface, [Document, Block, Inline]);
   <img src="./statics/slate-text-structure.png" width="400"  />
 </p>
 
-
 类似于 HTML Text，Slate.js 也定义了 Text Model 来表示节点的文本内容，它具有这些属性：
 
 - `key`：节点在当前文档中的索引
 - `object`：节点类型
 - `text`：一个计算属性，返回节点的文本内容
-
 - `leaves`: 文本叶子节点，不同格式（例如加粗，斜体等）的文本，将会被分拆为若干个 leaf
 - `marks`：文本节点所包含的所有 mark（标记）
 
@@ -146,7 +141,7 @@ mixin(ElementInterface, [Document, Block, Inline]);
 
 在模型层，Slate.js 是通过 mark 来标记文本格式，在视图层，开发者可以通过 CSS 或者 `<strong> ` 这样的 tag 来展示格式化文本。
 
-Slate.js  根据 mark 类型的不同，将 Text Node 拆分为了若干 Leaf。每个 Leaf 对象含有这些属性：
+Slate.js 根据 mark 类型的不同，将 Text Node 拆分为了若干 Leaf。每个 Leaf 对象含有这些属性：
 
 - `text: string`：leaf 的文本内容
 - `mark: Mark`: leaf 被标记上的 mark
@@ -159,17 +154,15 @@ Slate.js 设计了 Path Model 来表示节点在节点树中的位置，它是�
 	<img src="./statics/slate-path-demo.png" width="300"  />
 </p>
 
-
 > `[]` 则表示了根节点的位置
 
-## Selection Mirror
+## Selection 设计
 
 ### Range
 
 <p align="center">
   <img src="./statics/mixin-range-interface.png" width="400" />
 </p>
-
 
 Slate.js 参考了 DOM Selection 和 DOM Range 的设计，设计了 Range Model 作为选区的基础抽象，并通过 Range Interface 注入了选区相关能力。
 
@@ -182,8 +175,7 @@ Range Model 也采用 `anchor`、`focus` 来描述一个片段的起终点，更
   <img src="./statics/slate-range.png" width="400" />
 </p>
 
-
-另外，它还具有下面这些计算属性：
+另外，它还提供了额外的计算属性用于扩展选区信息：
 
 - `end` 与 `start`：如果说 `anchor`/`focus` 是 range 的「事实」起终点，那么 `start`/`end` 则是 range 的「视觉」起/终点，`start` 总在 `end` 之前（或者二者重叠）
 - `isBackward` 与 `isForward`：选区方向是向前还是向后
@@ -197,7 +189,6 @@ Range Model 也采用 `anchor`、`focus` 来描述一个片段的起终点，更
 <p align="center">
   <img src="./statics/slate-point-structure.png" width="400"  />
 </p>
-
 
 一个 Point 对象具有如下属性：
 
@@ -218,12 +209,10 @@ Slate.js 中的 Selection 遵循了现代浏览器的设计，一个 Selection �
 	<img src="./statics/slate-selection-structure.png" width="400" />
 </p>
 
-
 Selection 的能力则是通过 Range Interface 注入的。
 
 ## 总结
 
-一方面，Slate.js 尽可能地按照现行 HTML 标准去抽象编辑器的内核模型，让传统的 Web 应用开发者更加平滑地过度到编辑器的开发中。另一方面，Slate.js 也较为克制地扩展了 HTML 的数据模型，例如设计了 Point Model 来表示坐标，设计了 Path Model 来表示节点位置等等，以更加语义化的抽象，理清了选区和节点的「空间属性」。
+一方面，Slate.js 尽可能地按照现行 HTML 标准去抽象编辑器的内核模型，让传统的 Web 应用开发者更加平滑地过度到编辑器的开发中。另一方面，Slate.js 也较为克制地扩展了 HTML 的数据模型，例如设计了 Point 来表示坐标，设计了 Path 来表示节点位置等等，形成了更加语义化的抽象，梳理了选区和节点的「空间属性」。
 
-更新编辑器内容，也就是更新编辑器的节点树，那么，首先我们要能够找到待更新的节点，接下来，我们就看看，Slate.js 中是如何寻址一个节点的。
-
+Path 作为描述节点空间位置的模型，不仅关乎节点访问，也对后面我们会介绍的协同算法尤为重要，下一节，我们就将深入了解 Slate.js 中的 Path。
