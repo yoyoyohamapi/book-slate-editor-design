@@ -1,12 +1,12 @@
 # 指令系统
 
-在[序言](./[preface])一节中，我们有讨论过，`document.execCommand` 在各个浏览器上实现各异，因此，流行的富文本编辑器都不会依赖于原生的 `document.execCommand` 操作编辑器，而是会自行划归指令集范围。
+在 [序言](./[preface..md]) 一节中，我们就讨论过，`document.execCommand` 在各个浏览器上实现各异，因此，流行的富文本编辑器都不会依赖于原生的 `document.execCommand` 操作编辑器，而是会「自行划归指令集范围」。
 
 <p align="center">
   <img src="./statics/no-document-execcommand.png" width="500" />
 </p>
 
-Slate.js 也是如此，当我们拥有了一个 Controller 对象，就能通过绑定在其上的各种指令（Command）来操控编辑器，不仅能修改文档的内容，也能修改文档的选区：
+Slate.js 也是如此，当我们拥有了一个编辑器实例，就能通过绑定在其上的各种指令（Command）来操控编辑器，不仅能修改文档的内容，也能修改文档的选区：
 
 ```js
 controller
@@ -41,12 +41,13 @@ const controller = new Controller({
   plugins: [BoldPlugin()]
 })
 
+// 现在，可以使用 `toggleBold` 命令来加粗或者取消加粗文本
 controller.toggleBold()
 ```
 
 ## 绑定指令
 
-出于减少冗余代码的考虑，Slate.js 大量的命令都是在运行时动态注入的，例如 `*ByKey`  指令就是基于 `*ByPath` 指令创建，并注入到 Controller 实例的：
+出于减少冗余代码的考虑，Slate.js 大量的命令都是在运行时动态注入的，例如 `*ByKey`  指令就是基于 `*ByPath` 指令创建，再注入到 Controller 实例的：
 
 ```js
 /**
@@ -75,13 +76,7 @@ for (const method of COMMANDS) {
 }
 ```
 
-这种动态绑定方式，虽然砍掉了不少样板代码，但是对于代码提示并不友好，IDE 或者代码编辑器无法提示某个指令是否存在，在使用过程也并不安全，例如如果我们没有注册加粗插件，那么调用：
-
-```js
-controller.toggleBold()
-```
-
-就会引发错误：
+这种动态绑定方式，虽然砍掉了不少样板代码，但是对于代码提示并不友好，IDE 或者代码编辑器无法提示某个指令是否存在（这当然不绝对，因为社区可以为 TypeScript 用户提供一份 `.d.ts`）。更为严重的是，这不是一个安全的设计，例如如果我们没有注册加粗插件，那么调用 `controller.toggleBold` ，就会引发错误：
 
 ```txt
 Uncaught TypeError: controller.toggleBold is not a function
@@ -92,10 +87,10 @@ Uncaught TypeError: controller.toggleBold is not a function
 另一类特殊的指令是 Query 指令，也就是查询指令，用于查询当前文档信息：
 
 ```js
-const isVoid = editor.isVoid(node)
+const isVoid = controller.isVoid(node)
 ```
 
-同样地，也支持通过插件扩展 query：
+同样地，也支持通过插件扩展 query，扩展的指令同样在运行时绑定到编辑器实例上：
 
 ```js
 const BoldPlugin = () => {

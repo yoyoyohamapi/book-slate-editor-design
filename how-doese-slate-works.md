@@ -1,16 +1,15 @@
 # Slate.js 是怎么工作的
 
-我们回顾在 [Slate.js 介绍](./introduce-slate.md) 中展示的一个集成了文本加粗概念的编辑器 Demo：
+在 [Slate.js 介绍](./introduce-slate.md) 一节中，我们展示了一个支持文本加粗的编辑器：
 
 <p align="center">
 	<img src="./statics/slate-bold-demo.png" width="500" align="center" />
 </p>
-
-Slate.js 本身提供了一个视图无关的内核，但在这里，因为我们选择了 React 作为视图层框架，因此引入了 `slate-react` 来连接 React 与 Slate.js。
+> Slate.js 本身提供了一个视图无关的内核 `slate-core`，但考虑到我们选择了 React 作为视图层解决方案，因此引入了 `slate-react` 来连接 React 与 Slate.js。
 
 当用户在富文本编辑器中，选中了一段文本，并按下加粗快捷键，最终看到这段选中的文本被加粗，其中经历了：
 
-- 应用程序声明了一个加粗「插件（Plugin）」，并通过 slate-react 提供的 `<Editor />` 组件向 Slate.js 注册了这个插件
+- 应用程序声明了一个加粗「插件（Plugin）」，并通过 `slate-react` 提供的 `<Editor />` 组件向 Slate.js 注册了这个插件
 
   ```jsx
   const plugins = [BoldPlugin()];
@@ -20,7 +19,7 @@ Slate.js 本身提供了一个视图无关的内核，但在这里，因为我�
   />
   ```
 
-- 用户的按键事件被插件拦截，触发了插件 `onKeyDown` 回调，在当中，通过编辑器实例调用「指令（Command）」去为文本设置了类型为 `bold` 的 mark
+- 用户的按键事件被插件拦截，触发了插件 `onKeyDown` hook，其中通过编辑器实例调用了名为 `toggleMark` 的「指令（Command）」，为文本设置了类型为 `bold` 的格式
 
   ```js
   const BoldPlugin = () => {
@@ -43,7 +42,7 @@ Slate.js 本身提供了一个视图无关的内核，但在这里，因为我�
 	<img src="./statics/slate-workflow.png" align="center" />
 </p>
 
-我们如果把中间过程中都概括为 Actions，那么这就是经典的「单项数据流」链路：
+我们如果把中间过程中都粗略地概括为 Actions（行为），那么这就是经典的「单项数据流」链路：
 
 <p align="cenert">
   <img src="./statics/unidirectional-data-flow.png" width="300" />
