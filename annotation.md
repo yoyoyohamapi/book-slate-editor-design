@@ -3,7 +3,7 @@
 Decoration 虽然为节点提供了动态装饰的能力，但是它却有一些限制：
 
 - **歧义**：以 Mark + renderMark 作为装饰手段，开发者难于理清它与文档模型中的 Mark 的异同
-- **不支持协同**：假定我们通过 `setDecorations(decorations)`  为一个图片节点装饰上了 “上传进度”，期望协同者也能看到这个进度，基于 Decoration 实现起来就比较困难了，因为 decorations 无法通过 Operation 记性协同
+- **不支持协同**：假定我们通过 `setDecorations(decorations)`  为一个图片节点装饰上了 “上传进度”，期望协同者也能看到这个进度，基于 Decoration 实现起来就比较困难了，因为生成 Decoration 不会产生 Operation
 
 Slate.js 在 0.47 版本后引入了 Annotation 来替代 Decoration，它的数据结构被描述为：
 
@@ -11,7 +11,9 @@ Slate.js 在 0.47 版本后引入了 Annotation 来替代 Decoration，它的数
 {
   object: 'annotation',
   key: String,
+  // 使用 type 描述装饰类型
   type: String,
+  // 使用 Data 而不是 Mark 描述装饰内容
   data: Map,
   anchor: Point,
   focus: Point,
@@ -43,7 +45,7 @@ renderAnnotation = (props, editor, next) => {
 }
 ```
 
-通过调用编辑器实例的 `addAnnotation(annotation)` 方法能够新增一条 Annotation：
+通过调用编辑器实例的 `addAnnotation(annotation)` 方法创建 Annotation：
 
 ```js
 editor.addAnnotation({
@@ -69,9 +71,9 @@ Annotation 工作流程与 Decoration 类似，为了避免遍历全量 annotati
   <img src="./statics/annotations-arrangement.png" width="500" />
 </p>
 
-## 支持协同
+## 协同支持
 
-更进一步，Slate.js 为 Annotation 附带了增删改查的 Operation，如 `add_annotation` 和 `remove_annotation`，使得 Annotation 支持协同。假定我们的编辑器需要展示协同者的选区，那么就可以将协同选区定义为一个 Annotation：
+更进一步，Slate.js 为 Annotation 附带了增删改查的 Operation，如 `add_annotation` 和 `remove_annotation`，使得 Annotation 支持协同。假定我们的编辑器需要展示「协同者的选区」，那么就可以将协同选区定义为一个 Annotation：
 
 ```js
 {
@@ -87,5 +89,5 @@ Annotation 工作流程与 Decoration 类似，为了避免遍历全量 annotati
 }
 ```
 
-每当协作者的选区变更时，`renderAnnotation` 都会被调用，协作者的选区被绘制到编辑器上。想象力远不止于此，基于 Annotation，我们还能实现多人实时划词评论等等。
+每当协作者的选区变更时，`renderAnnotation` 都会被调用，协作者的选区被绘制到编辑器上。想象力远不止于此，基于 Annotation，我们还能实现多人实时划词评论等等功能，但是，因为新增了 Operation 和协同支持，也需要新增 OT 算法（后文协同知识部分会做介绍）的推导。
 

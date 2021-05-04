@@ -31,7 +31,9 @@
 * [挑战与变革](challenge-and-revolution.md)
   - [难于完美的编辑器](challenge.md)
   - [激进的跃进 - Slate.js 0.50](slate-050.md)
-* [附录 - 协同理论](collbarative-editor.md)
+* [附录 - 协同编辑器](collbarative-editor.md)
+
+  - [如何让编辑器支持协同](how-editor-be-collabarative.md)
 
   - [OT 算法](ot.md)
   - [协同调度](collaborate-engine.md)

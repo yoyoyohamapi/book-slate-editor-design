@@ -1,21 +1,24 @@
 # Decoration
 
-如果我们要为编辑器增加 “查找/替换” 或者 “代码高亮” 的功能，它们共同的特点都是：工作在当前数据模型之上，而不会创建新的数据模型。
+如果我们要为编辑器增加 “查找/替换” 或者 “代码高亮” 的功能，它们共同的特点都是：
+
+* 消费但不改变文档内容
+* 从文档内容中计算得到视图层需要的内容
 
 <p align="center">
   <img src="./statics/code-highlight.png" width="500" />
 </p>
 
-Slate.js 为此设计了 Decoration 来处理这样的需求，顾名思义，Decoration 表示装饰节点，它含有属性：
+Slate.js 为此设计了 Decoration 应付此类需求。顾名思义，Decoration 表示了内容装饰，一个 Decoration 对象含有属性：
 
 - `start`/`end`：Decoration 装饰的一个区间内的所有节点
-- `mark`：Decoration 使用了 Mark 来表示节点作何装饰
+- `mark`：Decoration 使用了 Mark 来表示装饰类型
 
 <p align="center">
   <img src="./statics/decoration.png" width="500" />
 </p>
 
-插件可以实现 `decorateNode` hook 来告诉 Slate.js 渲染到某个节点时，依据当前的上下文，如何产生装饰序列。在渲染文本时，根据装饰序列，将产生「不同的 Leaf 节点」，在 `renderMark` hook 中，可以通过 decoration mark 类型的不同，执行不同方式的渲染：
+插件通过实现 `decorateNode` hook 来告诉 Slate.js：视图层需要的数据如何从当前的节点计算得到。当编辑器开始渲染文本时，会根据生成的装饰序列，构建「不同的 Leaf 节点」，在 `renderMark` hook 中，可以通过 decoration mark 类型的不同，执行不同方式的渲染。下例中，就通过 Decoration 实现了「链接高亮」：
 
 ```js
 const LinkPlugin = () => ({
@@ -39,9 +42,7 @@ const LinkPlugin = () => ({
 })
 ```
 
-`docrateNode` 实现的是响应式的 Docoration 生成方式：根据渲染的节点决定怎么装饰。例如上面的代码中，如果节点的文本符合 URL 的格式，我们就用将它装饰为一个链接。
-
-有时候，decorations 却不是由节点生成的，而是由指令触发生成的。例如，如果当我们输入 `@` 后，期望展示候选人列表，我们就可以调用 `controller.setDecorations(decorations)` 来装饰 at 过程：
+`docrateNode` 的实现的是「响应式的」，即由节点内容计算得到装饰内容。但有时候，decorations 却不是根据节点生成的，而是由业务逻辑生成的。例如，当我们输入 `@` 符号后，期望展示 mention 列表，我们就可以在对应指令中，手动调用 `controller.setDecorations(decorations)` 来为 @ 包裹一个 decoration，当渲染到这个 decoration 时，UI 上呼出 mention 列表：
 
 ```js
 const MentionPlugin = () => ({
@@ -58,12 +59,8 @@ const MentionPlugin = () => ({
 
       decorations.push(
         Decoration.fromJSON({
-          start: {
-            // ...
-          },
-          end: {
-            // ...
-          }
+          start,
+          end,
           mark: {
             type: 'mention',
             klass: 'mark',
@@ -77,20 +74,20 @@ const MentionPlugin = () => ({
 })
 ```
 
-> 使用 `controller.setDecorations(decoratins)` 设置的 decorations 会被放在 top-level 上，即 `controller.value` 上
+>  使用 `controller.setDecorations(decoratins)` 设置的 decorations 是 top-level 级别的，被保存在了 `controller.value` 上。
 
 ## 注入与分发
 
-从上面的引例不难看出，一个节点的被装饰的序列就来源于：
+从上面的例子可以知道，一个节点被装饰的序列就来源于：
 
 - **注入的 decorations**：例如父节点注入的 decorations
 - **自己的 decorations**：由 `decorateNode` 生成
 
-诸如代码高亮这样的场景将会生成非常多的 decorations，每个词法分析获得的 token 都是一个 decoration。每次渲染文本时，遍历这些 decorations 拆分出 Leaf 是非常耗时的。为此，Slate.js 期望「在节点渲染时，它只拿到自己被装饰的 decorations」，因此，渲染节点树时，Slate.js 会进行 decorations 的分发，这个过程具体是：
+诸如代码高亮这样的场景将会生成非常多的 decorations，每个词法分析阶段获得的 token 都是一个 decoration。渲染文本时，从全量的 decorations 获得文本的装饰序列就是非常耗时的。为此，Slate.js 期望「在节点渲染时，它只拿到自己被装饰的 decorations」，因此，渲染节点树时，Slate.js 会进行 decorations 的分发，这个过程具体是：
 
-1. 首先为根节点注入 top-level 的 decorations（`controller.value.decorations`）
-2. 渲染 Node 期间，每个节点会先合并「当前节点被注入的 decorations 」和「节点 `decorateNode` 生成的 decorations」，再将合并后的 decorations 分发到子孙节点（之所以要做分发，是为了缩小节点收到 decorations，减少遍历开销）
-3. 直到 decorations 被分发到了文本节点，会根据 decorations 拆分出不同的 Leaf，decoration 此时完成了它的使命，变成了 Leaf 节点的 mark
+1. 首先为根节点（document）注入 top-level 的 decorations（`controller.value.decorations`）
+2. 渲染 Node 期间，每个节点会先合并「当前节点被注入的 decorations 」和「节点 `decorateNode` 生成的 decorations」，再将合并后的 decorations 分发到子孙节点
+3. 直到 decorations 被分发到了文本节点（text node），会根据 decorations 拆分出不同的 Leaf
 4. 渲染 Leaf 期间，插件的 `renderMark` 被调用，插件按照 mark 类型的不同进行不同的渲染
 
 ```js
