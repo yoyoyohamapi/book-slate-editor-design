@@ -17,25 +17,16 @@
   - [Decoration](decoration.md)
   - [Annotation](annotation.md)
   - [模型与视图的同步](sync-view-with-data.md)
-- [Tiny Slate.js：实现一个 Mini Slate.js](./tiny-the-slate.md)
+  - [跌入泥潭 - 输入法噩梦](hard-structure.md)
+- [可协同的编辑器]()
+  - [如何让编辑器支持协同](how-editor-be-collabarative.md)
+  - [协同的基石 - OT ](ot.md)
+  - [协同调度](collaborate-engine.md)
+- [Tiny Slate.js：实现一个协作编辑器](./tiny-the-slate.md)
   - [设计数据结构](tiny-design-data-structure.md)
   - [设计 Controller](./tiny-controller.md)
   - [实现编辑器组件](./tiny-editor-component.md)
-
-* [Slate.js 生态现状](slate-ecology.md)
-
-  - [兼容其他格式](serialize.md)
-  - [单元测试](test.md)
-  - [移动端编辑器](mobile-editor.md)
-
-* [挑战与变革](challenge-and-revolution.md)
-  - [难于完美的编辑器](challenge.md)
-  - [激进的跃进 - Slate.js 0.50](slate-050.md)
-* [附录 - 协同编辑器](collbarative-editor.md)
-
-  - [如何让编辑器支持协同](how-editor-be-collabarative.md)
-
-  - [OT 算法](ot.md)
-  - [协同调度](collaborate-engine.md)
+  - [实现 OT 算法](tiny-ot.md)
+  - [实现协同调度](tiny-collab-engine.md)
 
 * [关于作者](author.md)
