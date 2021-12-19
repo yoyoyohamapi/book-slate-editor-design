@@ -18,7 +18,7 @@
   - [Annotation](annotation.md)
   - [模型与视图的同步](sync-view-with-data.md)
   - [跌入泥潭 - 输入法噩梦](hard-structure.md)
-- [可协同的编辑器]()
+- [可协同的编辑器](collaborative-editor.md)
   - [如何让编辑器支持协同](how-editor-be-collabarative.md)
   - [协同的基石 - OT ](ot.md)
   - [协同调度](collaborate-engine.md)
