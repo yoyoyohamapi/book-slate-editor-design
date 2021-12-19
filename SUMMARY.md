@@ -19,7 +19,7 @@
   - [模型与视图的同步](sync-view-with-data.md)
   - [跌入泥潭 - 输入法噩梦](hard-structure.md)
 - [可协同的编辑器](collaborative-editor.md)
-  - [如何让编辑器支持协同](how-editor-be-collabarative.md)
+  - [Slate.js 是怎样支持协同的](how-editor-be-collabarative.md)
   - [协同的基石 - OT ](ot.md)
   - [协同调度](collaborate-engine.md)
 - [Tiny Slate.js：实现一个协作编辑器](./tiny-the-slate.md)
