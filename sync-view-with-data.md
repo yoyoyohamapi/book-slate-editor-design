@@ -150,7 +150,7 @@ class Controller {
 ```
 1. input "1"
 2. flush [insert_text "1"]
-3. paint "<cursor />1", udapte dom selection to 1 // Slate.js 会更新 DOM 选区以匹配模型选区
+3. paint "<cursor />1", udapte dom selection to 1 // 插入文本后，模型选区更新，Slate.js 会更新 DOM 选区以匹配模型选区
 4. input "2"
 5. paint "1<cursor />"
 6. selectionchange to 1 // DOM 选区更新，同样会刷新模型选区
