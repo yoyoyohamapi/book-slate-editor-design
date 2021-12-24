@@ -166,8 +166,8 @@ class Controller {
 
 错误的根本原因时，第二次 flush 时：
 
-* insert_text "2" 基于 UI 状态 "<cursor />1" 产生
-* set_selection to 1 基于 UI 状态 "1<cursor />" 产生
+* insert_text "2" 基于 UI 状态 `<cursor />1` 产生
+* set_selection to 1 基于 UI 状态 `1<cursor />` 产生
 
 apply 两个没有产生自相同视图上下文的 op，必然会导致状态紊乱。
 
