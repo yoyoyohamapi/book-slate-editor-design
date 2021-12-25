@@ -4,9 +4,9 @@
 
 在上文 [Slate.js 是如何支持协同的？](./how-editor-be-collaborative.md) 中，我们展示了一个协同编辑的例子，最终 A、B 用户的文档没有收敛为一致，亦即应用了对方操作后，他们没能看到相同的文档：
 
-<div style="text-align: center">
+<p align="center">
   <img src="./statics/oops-content-not-equal.png" width="800" />
-</div>
+</p>
 
 
 
@@ -55,9 +55,9 @@ Say:H<offset />
 
 直接在这个内容上应用 A 操作，自然不是应用在预期的空间上了，结果也无法保证了。
 
-<div style="text-align: center">
+<p align="center">
   <img src="./statics/context-mismatch.png" width="500" />
-</div>
+</p>
 
 当 Operation 不认识当前的上下文时，我们可以根据当前文档发生的变更，对它做调整，以适应当前的上下文后再应用它。回到例子中另 A 的操作为 Oa，另 B 的操作为 Ob，Oa 知道 Ob 在 [0,0] 位置插入了文本 `Say:`，也就知道了 Ob 在 [0,0] 开头增加了长度为 4 的字符串，那么我们就后移 Oa 的 offset 4 个长度，就将 Oa 调整到了期望的位置，我们另其为 Oa'：
 
@@ -65,9 +65,9 @@ Say:H<offset />
 { type: 'insert_text', path: [0,0], offset: 9, text: 'World', marks: [] } // Oa'
 ```
 
-<div style="text-align: center">
+<p align="center">
   <img src="./statics/transformed-oa.png" width="500" />
-</div>
+</p>
 
 同理，在 A 站点，调整后的 Ob' 为：
 
@@ -83,9 +83,9 @@ Say:H<offset />
 <span>Say:HelloWorld</span>
 ```
 
-<div style="text-align: center">
+<p align="center">
   <img src="./statics/convergenced-1on1.png" width="800" />
-</div>
+</p>
 
 
 
@@ -197,9 +197,9 @@ A 的操作到达 B 后，又该怎样的调整呢？如果 Oa 基于 B 站点�
 <span>SayHelloWorld</span>
 ```
 
-<div style="text-align: center">
+<p align="center">
   <img src="./statics/convergenced-1onmany.png" width="800" />
-</div>
+</p>
 
 
 
@@ -257,31 +257,31 @@ A 的操作到达 B 后，又该怎样的调整呢？如果 Oa 基于 B 站点�
 1. 初始状态为 S(0,0)
    a. A 执行了操作 A(0,0)，状态更新为 S(1,0)。再执行 A(1,0)，状态更新为 S(2,0)
    b. B 执行了操作 B(0,0)，状态更新为 S(0,1)。再执行 B(0,1)，状态更新为 S(0,2)
-<div style="text-align:center">
+<p align="center">
   <img src="./statics/ot-0.png" width="500" />
-</div>
+</p>
 2. A(0,0) 基于 B(0,0) 做 OT，得到可在状态 S(0,1) 上应用的 A(0,1)
-<div style="text-align:center">
+<p align="center">
   <img src="./statics/ot-1.png" width="500" />
-</div>
+</p>
 3. A(0,1) 基于 B(0,1) 做 OT，得到可在状态 S(0,2) 上应用的 A(0,2)
-<div style="text-align:center">
+<p align="center">
   <img src="./statics/ot-2.png" width="500" />
-</div>
+</p>
 4. B(0,0) 基于 A(0,0) 做 OT，得到可在状态 S(1,0) 上应用的 B(1,0)
-<div style="text-align:center">
+<p align="center">
   <img src="./statics/ot-3.png" width="500" />
-</div>
+</p>
 4. B(1,0) 基于 A(1,0) 做 OT，得到可在状态 S(2,0) 上应用的 B(2,0)
-<div style="text-align:center">
+<p align="center">
   <img src="./statics/ot-4.png" width="500" />
-</div>
+</p>
 5. ...
 
 最终，变化过程形如一个棋盘：
-<div style="text-align:center">
+<p align="center">
   <img src="./statics/ot-final.png" width="800" />
-</div>
+</p>
 
 * 站点 B，此时状态为 S(0,2)，我们得到了变换后的协同者操作 A(0,2) 与 A(1,2)，最终状态步进到了 S(2,2)
 
@@ -326,7 +326,7 @@ Ob': insert '2' at 0
 
 <div style="text-align: center">
   <img src="./statics/great-ot-not-equal.png" width="800" />
-</div>
+</p>
 
 最终还是出现了各站点内容不一致。因此，为了实现内容的一致，我们需要让 OT 算法满足：
 
@@ -365,7 +365,7 @@ Ob': insert '2' at 1
 在 A、B 站点分别应用 Ob' 和 Oa'，最后都将看到内容 '12'。
 <div style="text-align: center">
   <img src="./statics/great-ot-equal.png" width="800" />
-</div>
+</p>
 
 由此可见，OT 算法的约束和实现将极大影响协作内容的正确性，这里我们仅仅举例了简单文本操作的 OT 算法，对于那些更复杂的协同系统，对 OT 算法的要求还要更高。
 
@@ -382,5 +382,4 @@ Ob': insert '2' at 1
 ## 参考资料
 
 * [OT FAQ](https://www3.ntu.edu.sg/scse/staff/czsun/projects/otfaq/)
-
 * [Wiki - Operational Transformation](https://www.wikiwand.com/en/Operational_transformation)

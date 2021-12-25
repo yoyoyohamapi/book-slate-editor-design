@@ -13,7 +13,6 @@
 ```
 
 
-
 有两个协作用户 A、B 打开了这篇文档，并开始编辑：
 
 * A 在 "Hello" 后插入了 "World"
@@ -45,9 +44,9 @@ const newDoc = operations.reduce((val, op) => {
 <text><strong>Hello</strong>World</text>
 ```
 
-<div style="text-align: center">
+<p align="center">
   <img src="./statics/content-equal.png?123" width="800" />
-</div>
+</p>
 
 可以看到，基于 Operation，非常容易的就能合并多个协作的操作到同一篇文档，所以 Slate.js 敢说自己是现代化的，原生支持协同的编辑器。
 
@@ -77,8 +76,8 @@ B 执行了 A 的操作后，文档更新为了：
 <text>Say:HWorldello</text>
 ```
 
-<div style="text-align: center">
+<p align="center">
   <img src="./statics/oops-content-not-equal.png" width="800" />
-</div>
+</p>
 
 糟糕，现在 A、B 看到的内容不一样了，我们开始怀疑 Slate.js 对协同的支持了。其实，Slate.js 的表述没错，它提供了实现一个协同编辑器需要的能力（差量变更），但是它没有提供所有协同编辑器需要的能力。接下来，我们就看看，要实现一个可协同的编辑器，还需要做哪些工作？
