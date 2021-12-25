@@ -48,7 +48,7 @@ Say:H<offset />
 直接在这个内容上应用 A 操作，自然不是应用在预期的空间上了，结果也无法保证了。
 
 <p align="center">
-  <img src="./statics/context-mismatch.png" width="500" />
+  <img src="./statics/context-mismatch.png?1" width="500" />
 </p>
 
 当 Operation 不认识当前的上下文时，我们可以根据当前文档发生的变更，对它做调整，以适应当前的上下文后再应用它。回到例子中另 A 的操作为 Oa，另 B 的操作为 Ob，Oa 知道 Ob 在 [0,0] 位置插入了文本 `Say:`，也就知道了 Ob 在 [0,0] 开头增加了长度为 4 的字符串，那么我们就后移 Oa 的 offset 4 个长度，就将 Oa 调整到了期望的位置，我们另其为 Oa'：
@@ -58,7 +58,7 @@ Say:H<offset />
 ```
 
 <p align="center">
-  <img src="./statics/transformed-oa.png" width="500" />
+  <img src="./statics/transformed-oa.png?1" width="500" />
 </p>
 
 同理，在 A 站点，调整后的 Ob' 为：
@@ -205,8 +205,8 @@ A 的操作到达 B 后，又该怎样的调整呢？如果 Oa 基于 B 站点�
 那么上例中，A、B 要得到能够应用在各自站点的协作者的操作，过程就是：
 
 1. 初始状态为 S(0,0)
-a. A 执行了操作 A(0,0)，状态更新为 S(1,0)。再执行 A(1,0)，状态更新为 S(2,0)
-b. B 执行了操作 B(0,0)，状态更新为 S(0,1)。再执行 B(0,1)，状态更新为 S(0,2)
+    a. A 执行了操作 A(0,0)，状态更新为 S(1,0)。再执行 A(1,0)，状态更新为 S(2,0)
+    b. B 执行了操作 B(0,0)，状态更新为 S(0,1)。再执行 B(0,1)，状态更新为 S(0,2)
 <p align="center">
   <img src="./statics/ot-0.png" width="500" />
 </p>
