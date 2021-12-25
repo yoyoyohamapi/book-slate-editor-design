@@ -22,8 +22,8 @@
 那么将生成两个对文档的操作：
 
 ```js
-{ type: 'insert_text', path: [0], offset: 5, text: 'World', marks: [] } // A's op
-{ type: 'add_mark', path: [0], offset: 0, length: 5, mark: ['bold'] } // B's op
+{ type: 'insert_text', path: [0,0], offset: 5, text: 'World', marks: [] } // A's op
+{ type: 'add_mark', path: [0,0], offset: 0, length: 5, mark: ['bold'] } // B's op
 ```
 
 
@@ -59,8 +59,8 @@ const newDoc = operations.reduce((val, op) => {
 那么将生成两个对文档的操作：
 
 ```js
-{ type: 'insert_text', path: [0], offset: 5, text: 'World', marks: [] } // A's op
-{ type: 'insert_text', path: [0], offset: 0, text: 'Say:', marks: [] } // B's op
+{ type: 'insert_text', path: [0,0], offset: 5, text: 'World', marks: [] } // A's op
+{ type: 'insert_text', path: [0,0], offset: 0, text: 'Say:', marks: [] } // B's op
 ```
 
 
