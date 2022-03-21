@@ -47,8 +47,8 @@ Element.getComputedStyle();
 
 我们常见的 `div`、`p`、`span` 等都继承自 [HTMLElement](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement)（它继承自 Element）。在 HTML 5 之前，HTMLElement 被分为了:
 
-- **块级元素(Block Level Element)**：块级元素占据了父容器的整个空间，视觉上就是形成了一个 “块”。文档中每新增一个块，首先要新增一个容纳这个块的行。
-- **行内元素(Inline Level Element)**：行内元素只占据了内容所需要的空间。
+- **块级元素（Block Level Element）**：块级元素占据了父容器的整个空间，视觉上就是形成了一个 “块”。文档中每新增一个块，首先要新增一个容纳这个块的行。
+- **行内元素（Inline Level Element）**：行内元素只占据了内容所需要的空间。
 
 <p align="center">
 	<img src="./statics/block-contains-inline.png" width="450" />
