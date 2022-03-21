@@ -79,8 +79,7 @@ Anne van Kesteren 撰写了[第一版 contentEditable 的规范](https://annevan
 <strong><em>Baggins</em></strong>
 <em><strong>Baggins</strong></em>
 <em><strong>Bagg</strong><strong>ins</strong></em>
-<em><strong>Bagg</strong></em
-><strong><em>ins</em></strong>
+<em><strong>Bagg</strong></em><strong><em>ins</em></strong>
 ```
 
 ### 视觉选区与实际选区的多对多关系
@@ -102,29 +101,20 @@ his name was <strong><em>Baggins</em></strong>
 ```html
 his name was <cursor /><strong><em>Baggins</em></strong> his name was
 <strong><cursor /><em>Baggins</em></strong> his name was
-<strong
-  ><em><cursor />Baggins</em></strong
->
+<strong><em><cursor />Baggins</em></strong>
 ```
 
 继续在光标位置插入字符 `I`，由于插入位置（DOM 选区）的不同，将形成不同的内容：
 
-- his name was I**_Baggins_**
-- his name was I**_Baggins_**
+- his name was I***Baggins***
+- his name was **I*****Baggins***
 - his name was _**IBaggins**_
 
 而假如我们的文本是：
 
 > The hobbit was a very well-to-do hobbit, and his name was _**Baggins**_.
 
-在 `well-to-` 后面换行，用户看到的文本内容是：
-
-> The hobbit was a very well-to
-> do hobbit, and his name was _**Baggins**_.
-
-换行后，DOM 选区则选中了「从第一行末尾到第二行开头的」，那么怎么将这个选区展示给用户呢？光标究竟应该落在第一行末尾，还是第二行开头呢？
-
-DOM 选区可以被映射为不同的视觉选区，也就会造成悬摆选区问题：
+在 `well-to-` 后面换行，换行后，DOM 选区选中了「从第一行末尾到第二行开头」，那么怎么将这个选区展示给用户呢？光标究竟应该落在第一行末尾，还是第二行开头呢？这里也引起了悬摆选区，即一个 DOM 选区被映射为了不同的视觉选区：
 
 <p align="center">
 	<img src="./statics/dangling-selection.png" />
@@ -132,7 +122,7 @@ DOM 选区可以被映射为不同的视觉选区，也就会造成悬摆选区�
 
 ## 主流的编辑器架构
 
-由于 contentEditable 的不可靠，Medium Editor 在架构时，通过下面两个方式规避上面提到的问题：
+由于 contentEditable 的不可靠，[Medium 社区](https://medium.com/)在架构他们的编辑器时，通过下面两个方式规避上面提到的问题：
 
 - **模型与视图分离**：编辑器自定义视图无关的数据结构，视图的渲染不再由浏览器控制，而是由编辑器控制，从而满足「视觉与实际内容的一一映射」，避免在不同的浏览器中发散
 - **自定义指令**：自定义编辑器的指令集，一方面能扩充编辑器能力，但更重要的一方面，是避免直接调用 `document.execCommand` 在不同浏览器形成不一致的结果
