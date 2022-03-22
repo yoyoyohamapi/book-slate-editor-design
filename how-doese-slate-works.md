@@ -5,6 +5,7 @@
 <p align="center">
 	<img src="./statics/slate-bold-demo.png" width="500" align="center" />
 </p>
+
 > Slate.js 本身提供了一个视图无关的内核 `slate-core`，但考虑到我们选择了 React 作为视图层解决方案，因此引入了 `slate-react` 来连接 React 与 Slate.js。
 
 当用户在富文本编辑器中，选中了一段文本，并按下加粗快捷键，最终看到这段选中的文本被加粗，其中经历了：
@@ -42,9 +43,9 @@
 	<img src="./statics/slate-workflow.png" align="center" />
 </p>
 
-我们如果把中间过程中都粗略地概括为 Actions（行为），那么这就是经典的「单项数据流」链路：
+我们如果把中间过程中都粗略地概括为 Actions（行为），那么这就是经典的「单向数据流」链路：
 
-<p align="cenert">
+<p align="center">
   <img src="./statics/unidirectional-data-flow.png" width="300" />
 </p>
 
