@@ -27,6 +27,6 @@
   - [设计 Controller](./tiny-controller.md)
   - [实现编辑器组件](./tiny-editor-component.md)
   - [实现 OT 算法](tiny-ot.md)
-  - [实现协同调度](tiny-collab-engine.md)
+  - [实现协同调度](collaborate-engine.md)
 
 * [关于作者](author.md)
