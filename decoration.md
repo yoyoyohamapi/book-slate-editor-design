@@ -42,7 +42,7 @@ const LinkPlugin = () => ({
 })
 ```
 
-`docrateNode` 的实现的是「响应式的」，即由节点内容计算得到装饰内容。但有时候，decorations 却不是根据节点生成的，而是由业务逻辑生成的。例如，当我们输入 `@` 符号后，期望展示 mention 列表，我们就可以在对应指令中，手动调用 `controller.setDecorations(decorations)` 来为 @ 包裹一个 decoration，当渲染到这个 decoration 时，UI 上呼出 mention 列表：
+`decroateNode` 的实现的是「响应式的」，即由节点内容计算得到装饰内容。但有时候，decorations 却不是根据节点生成的，而是由业务逻辑生成的。例如，当我们输入 `@` 符号后，期望展示 mention 列表，我们就可以在对应指令中，手动调用 `controller.setDecorations(decorations)` 来为 @ 包裹一个 decoration，当渲染到这个 decoration 时，UI 上呼出 mention 列表：
 
 ```js
 const MentionPlugin = () => ({
