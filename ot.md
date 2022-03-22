@@ -51,7 +51,7 @@ Say:H<offset />
   <img src="./statics/context-mismatch.png?1" width="500" />
 </p>
 
-当 Operation 不认识当前的上下文时，我们可以根据当前文档发生的变更，对它做调整，以适应当前的上下文后再应用它。回到例子中另 A 的操作为 Oa，另 B 的操作为 Ob，Oa 知道 Ob 在 [0,0] 位置插入了文本 `Say:`，也就知道了 Ob 在 [0,0] 开头增加了长度为 4 的字符串，那么我们就后移 Oa 的 offset 4 个长度，就将 Oa 调整到了期望的位置，我们另其为 Oa'：
+当 Operation 不认识当前的上下文时，我们可以根据当前文档发生的变更，对它做调整，以适应当前的上下文后再应用它。回到例子中，另 A 的操作为 Oa，另 B 的操作为 Ob，Oa 知道 Ob 在 [0,0] 位置插入了文本 `Say:`，也就知道了 Ob 在 [0,0] 开头增加了长度为 4 的字符串，那么我们就后移 Oa 的 offset 4 个长度，就将 Oa 调整到了期望的位置，我们另其为 Oa'：
 
 ```js
 { type: 'insert_text', path: [0,0], offset: 9, text: 'World', marks: [] } // Oa'
