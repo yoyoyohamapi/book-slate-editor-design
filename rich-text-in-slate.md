@@ -67,7 +67,7 @@ class NodeInterface {
 minxin(NodeInterface, [Document, Block, Inline, Text]);
 ```
 
-## Element
+### Element
 
 <p align="center">
   <img src="./statics/mixin-element-interface.png" width="400" />
